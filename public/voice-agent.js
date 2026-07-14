@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
     promoCard.className = "mt-6 p-5 border border-amber-500/30 bg-amber-500/5 rounded-2xl flex flex-col sm:flex-row items-center gap-4 text-left max-w-xl mx-auto shadow-lg animate-fade-in";
     promoCard.innerHTML = `
       <div class="w-16 h-20 bg-zinc-900 border border-zinc-800 rounded flex-shrink-0 overflow-hidden flex items-center justify-center">
-        <img src="How to Slay Your Giant Workbook.jpg" alt="Workbook Cover" class="w-full h-full object-cover">
+        <img src="/How to Slay Your Giant Workbook.jpg" alt="Workbook Cover" class="w-full h-full object-cover">
       </div>
       <div class="flex-grow space-y-2">
         <div class="flex justify-between items-start">
