@@ -1228,6 +1228,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  const ebookHeroPurchaseBtn = document.getElementById('ebook-hero-purchase-btn');
+  if (ebookHeroPurchaseBtn) {
+    ebookHeroPurchaseBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      updateCheckoutModalForProduct('ebook');
+      openCheckoutModal();
+    });
+  }
+
   if (checkoutClose) {
     checkoutClose.addEventListener('click', closeCheckoutModal);
   }

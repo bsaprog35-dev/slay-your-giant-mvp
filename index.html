@@ -567,42 +567,24 @@
 
   <!-- E-book Portal Section -->
   <section id="book-portal" class="relative bg-[#121214] py-20 px-6 border-y border-zinc-800/50">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        
-        <div class="flex justify-center md:justify-end perspective-1000 order-2 md:order-1">
-            <div class="relative w-72 sm:w-80 h-[450px] rounded-r-lg shadow-2xl shadow-red-950/40 transform rotate-y-12 hover:rotate-y-0 transition-transform duration-500 ease-out border border-zinc-800 bg-[#18181B] overflow-hidden">
-                <div class="absolute left-0 top-0 bottom-0 w-3 bg-gradient-to-r from-black/40 to-transparent z-10"></div>
-                <img src="/book-cover.png" alt="How to Slay Your Giant Book Cover" class="w-full h-full object-cover">
-            </div>
+    <div class="max-w-5xl mx-auto">
+      <!-- STANDALONE BOOK HERO CARD -->
+      <div class="flex flex-col md:flex-row items-center gap-8 bg-zinc-900/90 border border-zinc-800 p-8 rounded-none shadow-2xl">
+        <div class="w-full md:w-1/2 flex justify-center">
+          <img src="/book-cover.png" alt="How to Slay Your Giant Book" class="max-h-80 object-contain grayscale contrast-110 hover:grayscale-0 transition duration-500" />
         </div>
-
-        <div class="space-y-6 order-1 md:order-2 text-center md:text-left">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-950/50 border border-red-800/30 text-red-400 text-xs font-mono uppercase tracking-widest">
-                <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span> Equip Your Armor
-            </div>
-            
-            <h2 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
-                How to Slay <br class="hidden sm:inline">Your Giant
-            </h2>
-            
-            <p class="text-zinc-400 text-lg leading-relaxed max-w-xl">
-                Every believer faces a valley. Whether it's the giant of fear, rejection, shame, or a capped vision, you weren't created to live intimidated by the obstacles in front of you. Dr. Ben C. Johnson III has weaponized years of deep theological study and raw coaching execution into a direct, digital field manual.
-            </p>
-            
-            <p class="text-zinc-400 text-lg leading-relaxed max-w-xl">
-                Get the exact spiritual strategies to confront your barriers, stand firm in your divine assignment, and become part of the 8% who rise, transform, and conquer.
-            </p>
-
-            <div class="pt-4 flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
-                <a href="https://velocityos.ai/dr-ben/platform/checkout" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#D97706] to-[#B45309] hover:from-[#F59E0B] hover:to-[#D97706] text-white font-bold text-lg shadow-lg shadow-amber-950/30 transition-all duration-300 transform hover:-translate-y-0.5">
-                    <i class="fa-solid fa-cart-shopping text-sm"></i> Claim Your Copy — $10.00
-                </a>
-                <span class="text-xs text-zinc-500 font-mono flex items-center gap-1">
-                    <i class="fa-solid fa-lock text-zinc-600"></i> Secure Digital Access
-                </span>
-            </div>
+        <div class="w-full md:w-1/2 space-y-4 text-left">
+          <span class="text-amber-500 font-mono text-xs uppercase tracking-widest">// EQUIP YOUR ARMOR</span>
+          <h2 class="text-3xl font-extrabold text-white font-montserrat uppercase">How to Slay Your Giant</h2>
+          <p class="text-zinc-400 text-sm leading-relaxed">
+            Every believer faces a valley. Whether it's the giant of fear, rejection, shame, or a capped vision, you weren't created to live intimidated by the obstacles in front of you. Dr. Ben C. Johnson III has weaponized years of deep theological study and raw coaching execution into a direct, digital field manual.
+          </p>
+          <!-- UPDATED PRICE BUTTON -->
+          <button id="ebook-hero-purchase-btn" class="btn-primary w-full py-4 flex items-center justify-center gap-2">
+            <span>🛒</span> Claim Your Copy — $29.95
+          </button>
         </div>
-
+      </div>
     </div>
   </section>
 
