@@ -1,0 +1,55 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "server.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "public/**/*",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/chat",
+      "dest": "server.js"
+    },
+    {
+      "src": "/api/voice",
+      "dest": "server.js"
+    },
+    {
+      "src": "/css/styles.css",
+      "dest": "public/css/styles.css"
+    },
+    {
+      "src": "/voice-agent.js",
+      "dest": "public/voice-agent.js"
+    },
+    {
+      "src": "/dr_ben_headshot.png",
+      "dest": "public/dr_ben_headshot.png"
+    },
+    {
+      "src": "/How to Slay Your Giant.jpg",
+      "dest": "public/How to Slay Your Giant.jpg"
+    },
+    {
+      "src": "/How to Slay Your Giant Workbook.jpg",
+      "dest": "public/How to Slay Your Giant Workbook.jpg"
+    },
+    {
+      "src": "/screen.png",
+      "dest": "public/screen.png"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "index.html"
+    }
+  ]
+}
