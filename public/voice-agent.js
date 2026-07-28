@@ -1546,18 +1546,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  const cohortApplyBtn = document.getElementById('cohort-apply-btn');
-  if (cohortApplyBtn && modalOverlay) {
-    cohortApplyBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      modalOverlay.classList.remove('hidden');
-      modalOverlay.classList.add('flex');
-      modalOverlay.offsetHeight;
-      modalOverlay.classList.remove('opacity-0');
-      modalOverlay.classList.add('opacity-100');
-      resetWizard();
-    });
-  }
+  const cohort1500Btn = document.getElementById('cohort-1500-btn');
+  const sprint499Btn = document.getElementById('sprint-499-btn');
+  const mentorship1200Btn = document.getElementById('mentorship-1200-btn');
+
+  const leadButtons = [cohort1500Btn, sprint499Btn, mentorship1200Btn];
+  leadButtons.forEach(btn => {
+    if (btn && modalOverlay) {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        modalOverlay.classList.remove('hidden');
+        modalOverlay.classList.add('flex');
+        modalOverlay.offsetHeight;
+        modalOverlay.classList.remove('opacity-0');
+        modalOverlay.classList.add('opacity-100');
+        resetWizard();
+      });
+    }
+  });
 
   function hideModal() {
     if (modalOverlay) {
