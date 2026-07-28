@@ -36,12 +36,12 @@
       "dest": "public/dr_ben_headshot.png"
     },
     {
-      "src": "/How to Slay Your Giant.jpg",
-      "dest": "public/How to Slay Your Giant.jpg"
+      "src": "/book-cover.png",
+      "dest": "public/book-cover.png"
     },
     {
-      "src": "/How to Slay Your Giant Workbook.jpg",
-      "dest": "public/How to Slay Your Giant Workbook.jpg"
+      "src": "/workbook-cover.png",
+      "dest": "public/workbook-cover.png"
     },
     {
       "src": "/screen.png",
