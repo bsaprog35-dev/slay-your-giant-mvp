@@ -1548,9 +1548,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const cohort1500Btn = document.getElementById('cohort-1500-btn');
   const sprint499Btn = document.getElementById('sprint-499-btn');
-  const mentorship1200Btn = document.getElementById('mentorship-1200-btn');
+  const mentorship12000Btn = document.getElementById('mentorship-12000-btn');
 
-  const leadButtons = [cohort1500Btn, sprint499Btn, mentorship1200Btn];
+  const leadButtons = [cohort1500Btn, sprint499Btn, mentorship12000Btn];
   leadButtons.forEach(btn => {
     if (btn && modalOverlay) {
       btn.addEventListener('click', (e) => {
