@@ -1546,6 +1546,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  const cohortApplyBtn = document.getElementById('cohort-apply-btn');
+  if (cohortApplyBtn && modalOverlay) {
+    cohortApplyBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      modalOverlay.classList.remove('hidden');
+      modalOverlay.classList.add('flex');
+      modalOverlay.offsetHeight;
+      modalOverlay.classList.remove('opacity-0');
+      modalOverlay.classList.add('opacity-100');
+      resetWizard();
+    });
+  }
+
   function hideModal() {
     if (modalOverlay) {
       modalOverlay.classList.remove('opacity-100');

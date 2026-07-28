@@ -1419,47 +1419,88 @@
         <span class="label-caps" style="color: var(--text-muted);">MONETIZATION GATEWAY</span>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-        <!-- E-Book Card -->
-        <div class="bg-zinc-950 border border-zinc-800 p-8 flex flex-col justify-between h-full relative group hover:border-[#D97706]/40 transition-all duration-300">
-          <div class="absolute top-0 left-0 w-full h-[1px] bg-zinc-800 group-hover:bg-[#D97706]"></div>
+      <div class="offerings-grid max-w-6xl mx-auto">
+        <!-- Tier 1: The Foundation -->
+        <div class="offer-card group">
           <div>
-            <span class="label-caps text-[10px] text-zinc-500 block mb-4">DIGITAL FIELD MANUAL</span>
-            <div class="w-40 h-52 bg-zinc-900 border border-zinc-800/80 overflow-hidden mx-auto mb-6 shadow-md shadow-amber-950/10">
-              <img src="/How to Slay Your Giant.jpg" alt="How to Slay Your Giant E-book" class="w-full h-full object-cover grayscale contrast-110 group-hover:grayscale-0 transition-all duration-500">
-            </div>
-            <h3 class="text-xl font-bold text-white uppercase tracking-wider mb-2 font-sans text-center">How to Slay Your Giant</h3>
-            <p class="text-zinc-400 text-xs leading-relaxed font-sans mb-6 text-center">
-              The direct digital manual detailing the strategies, scriptural alignments, and actions to confront your valley and slay your barriers.
-            </p>
-            <div class="text-center font-mono text-2xl font-black text-white mb-6">$10.00</div>
-          </div>
-          <button id="ebook-purchase-btn" class="w-full py-4 bg-gradient-to-r from-[#D97706] to-[#B45309] hover:from-[#F59E0B] hover:to-[#D97706] text-white border-none font-bold text-xs uppercase tracking-widest transition-all duration-300 rounded-none cursor-pointer">
-            Claim Your Copy
-          </button>
-        </div>
-
-        <!-- Workbook Card -->
-        <div class="bg-zinc-950 border border-amber-500/35 p-8 flex flex-col justify-between h-full relative group shadow-xl shadow-amber-950/5">
-          <div class="absolute top-0 left-0 w-full h-[1px] bg-amber-500"></div>
-          <div class="absolute -top-3.5 right-6 px-3 py-1 bg-amber-500 text-black text-[9px] font-mono uppercase tracking-widest font-bold">
-            HIGHLY RECOMMENDED
-          </div>
-          <div>
-            <span class="label-caps text-[10px] text-amber-500 block mb-4">TACTICAL WORKBOOK</span>
+            <span class="offer-level label-caps">01 // THE FOUNDATION</span>
             <div class="w-40 h-52 bg-zinc-900 border border-zinc-800/80 overflow-hidden mx-auto mb-6 shadow-md shadow-amber-950/10 relative">
               <img src="/How to Slay Your Giant Workbook.jpg" alt="Slay Your Giant Workbook" class="w-full h-full object-cover grayscale brightness-90 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-105 transition-all duration-500">
               <div class="absolute inset-0 bg-[#D97706]/10 mix-blend-color group-hover:opacity-0 transition-opacity duration-500"></div>
             </div>
-            <h3 class="text-xl font-bold text-white uppercase tracking-wider mb-2 font-sans text-center">The Slay Your Giant Workbook</h3>
+            <h3 class="offer-title text-xl font-bold text-white uppercase tracking-wider mb-2 font-sans text-center">The Foundation</h3>
             <p class="text-zinc-400 text-xs leading-relaxed font-sans mb-6 text-center">
-              Deep, comprehensive playbook built with guided prompts, audit sheets, and structural templates to execute your 7-day calibration.
+              Get the complete physical/digital workbook containing all 7-day calibration matrices, plus E-Book access.
             </p>
-            <div class="text-center font-mono text-2xl font-black text-amber-500 mb-6">$45.00</div>
+            <div class="offer-price justify-center mb-6">
+              $45<span>.00</span>
+            </div>
+            <ul class="offer-features">
+              <li>7-Day Calibration Workbook</li>
+              <li>Immediate E-Book Digital Access</li>
+              <li>Self-Paced Strategic Audit</li>
+            </ul>
           </div>
-          <button id="workbook-purchase-btn" class="w-full py-4 bg-gradient-to-r from-[#D97706] to-[#B45309] hover:from-[#F59E0B] hover:to-[#D97706] text-white border-none font-bold text-xs uppercase tracking-widest transition-all duration-300 rounded-none cursor-pointer">
-            Claim Your Workbook
+          <div class="space-y-3">
+            <button id="workbook-purchase-btn" class="w-full py-4 bg-gradient-to-r from-[#D97706] to-[#B45309] hover:from-[#F59E0B] hover:to-[#D97706] text-white border-none font-bold text-xs uppercase tracking-widest transition-all duration-300 rounded-none cursor-pointer">
+              Claim Your Workbook
+            </button>
+            <button id="ebook-purchase-btn" class="w-full py-2.5 bg-transparent border border-zinc-800 hover:border-zinc-500 text-zinc-500 hover:text-white font-bold text-[9px] uppercase tracking-wider transition-all duration-300 rounded-none cursor-pointer">
+              Or Get E-Book Only — $10.00
+            </button>
+          </div>
+        </div>
+
+        <!-- Tier 2: The Sovereign Cohort -->
+        <div class="offer-card cohort-highlight group">
+          <div class="offer-tag">Limited to 15 Leaders</div>
+          <div>
+            <span class="offer-level label-caps" style="color: var(--brushed-gold);">02 // SOVEREIGN COHORT</span>
+            <div class="w-40 h-52 bg-zinc-900 border border-[#D97706]/40 overflow-hidden mx-auto mb-6 shadow-md shadow-amber-950/10 relative">
+              <img src="/dr_ben_headshot.png" alt="Dr. Ben Johnson III" class="w-full h-full object-cover grayscale brightness-90 group-hover:scale-105 transition-all duration-500 group-hover:grayscale-0 group-hover:brightness-100">
+              <div class="absolute inset-0 bg-[#D97706]/20 mix-blend-color group-hover:opacity-0 transition-opacity duration-500"></div>
+            </div>
+            <h3 class="offer-title text-xl font-bold text-white uppercase tracking-wider mb-2 font-sans text-center">The Sovereign Cohort</h3>
+            <p class="text-zinc-400 text-xs leading-relaxed font-sans mb-6 text-center">
+              12-week intensive masterclass and direct proximity advisory vault for high-agency leaders.
+            </p>
+            <div class="offer-price justify-center mb-6" style="color: var(--brushed-gold);">
+              $1,500<span>.00</span>
+            </div>
+            <ul class="offer-features">
+              <li>12-Week Intensive Mentorship</li>
+              <li>Weekly Live Advisory Sprints</li>
+              <li>Peer-to-Peer Enterprise Network</li>
+            </ul>
+          </div>
+          <button id="cohort-apply-btn" class="w-full py-4 bg-gradient-to-r from-[#D97706] to-[#B45309] hover:from-[#F59E0B] hover:to-[#D97706] text-white border-none font-bold text-xs uppercase tracking-widest transition-all duration-300 rounded-none cursor-pointer">
+            Apply for Admission
           </button>
+        </div>
+
+        <!-- Tier 3: Keynote & Private Executive Coaching -->
+        <div class="offer-card group">
+          <div>
+            <span class="offer-level label-caps">03 // KEYNOTE & COACHING</span>
+            <div class="w-40 h-52 bg-zinc-900 border border-zinc-800/80 overflow-hidden mx-auto mb-6 shadow-md shadow-amber-950/10 flex items-center justify-center text-[#c6c6c7] group-hover:text-white transition-colors">
+              <i class="fa-solid fa-microphone-lines text-5xl text-zinc-700 group-hover:text-[#D97706] transition-colors duration-500"></i>
+            </div>
+            <h3 class="offer-title text-xl font-bold text-white uppercase tracking-wider mb-2 font-sans text-center">Keynote & Advisory</h3>
+            <p class="text-zinc-400 text-xs leading-relaxed font-sans mb-6 text-center">
+              Retain Dr. Ben for corporate keynote speaking engagements or private executive coaching.
+            </p>
+            <div class="offer-price justify-center mb-6" style="font-size: 20px; font-weight: 800; tracking-wider; height: 60px; display: flex; align-items: center;">
+              INQUIRE FOR RATES
+            </div>
+            <ul class="offer-features">
+              <li>Private Executive Advisory Role</li>
+              <li>Corporate Alignment Consulting</li>
+              <li>High-Impact Keynote Speaking</li>
+            </ul>
+          </div>
+          <a href="#the-anchor" class="w-full py-4 text-center bg-transparent border border-white text-white hover:bg-white hover:text-black font-bold text-xs uppercase tracking-widest transition-all duration-300 rounded-none cursor-pointer block box-border no-underline">
+            Book Dr. Ben
+          </a>
         </div>
       </div>
     </div>
