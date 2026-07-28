@@ -11,8 +11,16 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-// Serve static assets from the root workspace and public folder
-app.use(express.static(__dirname));
+// Serve static assets from the root workspace and public folder with no-cache headers for HTML files
+app.use(express.static(__dirname, {
+  setHeaders: (res, filePath) => {
+    if (filePath.endsWith('.html')) {
+      res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+      res.setHeader('Pragma', 'no-cache');
+      res.setHeader('Expires', '0');
+    }
+  }
+}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Google Gen AI SDK
