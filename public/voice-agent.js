@@ -1171,8 +1171,8 @@ document.addEventListener('DOMContentLoaded', () => {
         checkoutProductImage.alt = "E-Book Cover";
       }
       if (checkoutProductTitle) checkoutProductTitle.textContent = "How to Slay Your Giant (E-book)";
-      if (checkoutProductPrice) checkoutProductPrice.textContent = "$10.00";
-      if (checkoutSubmitBtn) checkoutSubmitBtn.innerHTML = "<span>Authorize Payment — $10.00</span>";
+      if (checkoutProductPrice) checkoutProductPrice.textContent = "$29.95";
+      if (checkoutSubmitBtn) checkoutSubmitBtn.innerHTML = "<span>Authorize Payment — $29.95</span>";
     } else {
       if (checkoutProductSubtitle) checkoutProductSubtitle.textContent = "The Slay Your Giant Workbook";
       if (checkoutProductImage) {
@@ -1180,8 +1180,8 @@ document.addEventListener('DOMContentLoaded', () => {
         checkoutProductImage.alt = "Workbook Cover";
       }
       if (checkoutProductTitle) checkoutProductTitle.textContent = "Slay Your Giant Workbook";
-      if (checkoutProductPrice) checkoutProductPrice.textContent = "$45.00";
-      if (checkoutSubmitBtn) checkoutSubmitBtn.innerHTML = "<span>Authorize Payment — $45.00</span>";
+      if (checkoutProductPrice) checkoutProductPrice.textContent = "$19.95";
+      if (checkoutSubmitBtn) checkoutSubmitBtn.innerHTML = "<span>Authorize Payment — $19.95</span>";
     }
   }
 
@@ -1205,7 +1205,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Restore submit button state
         if (checkoutSubmitBtn) {
           checkoutSubmitBtn.disabled = false;
-          const priceText = activeProduct === 'ebook' ? '$10.00' : '$45.00';
+          const priceText = activeProduct === 'ebook' ? '$29.95' : '$19.95';
           checkoutSubmitBtn.innerHTML = `<span>Authorize Payment — ${priceText}</span>`;
         }
       }, 300);
