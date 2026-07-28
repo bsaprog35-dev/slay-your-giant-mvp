@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Slay Your Giant: Discover your purpose, identify your barriers, and step into Kingdom authority with Dr. Ben Johnson III's AIM (Active, Intentional, Movement) system.">
+  <meta name="description" content="Slay Your Giant: Discover your purpose, identify your barriers, and step into Kingdom authority with Dr. Ben Johnson III's AIM (Active Intentional Movement) system.">
   <title>GIANT SLAYER BRIEFINGS</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -143,7 +143,7 @@
           </div>
           <h3 class="text-2xl font-bold text-white">Calibration Engine Compiled</h3>
           <p class="text-zinc-400 text-sm leading-relaxed max-w-sm mx-auto">
-            Calibration Engine Compiled. Your metrics have been securely channeled to your AI Twin. Scroll down to Section 3 to process your audit via live voice print.
+            Calibration Engine Compiled. Your metrics have been securely channeled to your AI Twin. Scroll down to process your audit via live voice print.
           </p>
           <button type="button" id="calibration-success-close-btn" class="px-8 py-3 bg-zinc-800 hover:bg-zinc-700 text-white text-sm font-bold rounded-xl transition-colors cursor-pointer mt-4 border border-zinc-700">
             Close Wizard
@@ -159,6 +159,7 @@
     <a href="#" class="nav-logo">SLAY YOUR GIANT<span>.</span></a>
     <ul class="nav-links">
       <li><a href="#friction">The Friction</a></li>
+      <li><a href="#standalone-assets">Field Manuals</a></li>
       <li><a href="#portal">Voice Portal</a></li>
       <li><a href="#methodology">The AIM System</a></li>
       <li><a href="#transformation">Victory Wall</a></li>
@@ -172,13 +173,13 @@
     </ul>
   </nav>
 
-  <!-- Section 1: Hero Space (The Void) -->
+  <!-- Section 1: Hero Space -->
   <section class="hero-section" id="hero">
     <div class="container hero-grid">
       <div class="hero-left">
         <span class="label-caps hero-tag">THE ANCHOR MATRIX // AIM INITIATIVE</span>
         <h1 class="text-5xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight uppercase" style="font-family: var(--font-montserrat);">SLAY YOUR GIANT: <span class="text-[#D97706]">The Possible People Doing the Impossible.</span></h1>
-        <p class="text-zinc-400 text-lg sm:text-xl leading-relaxed max-w-xl">A proven system to help you discover your purpose, identify your giant, and move with confidence through AIM (Active, Intentional, Movement).</p>
+        <p class="text-zinc-400 text-lg sm:text-xl leading-relaxed max-w-xl">A proven system to help you discover your purpose, identify your giant, and move with confidence through AIM (Active Intentional Movement).</p>
         <div class="hero-ctas">
           <a href="#portal" class="btn-primary">Start Your Journey</a>
           <a href="#the-anchor" class="btn-secondary">Book Dr. Ben Johnson III</a>
@@ -186,13 +187,10 @@
       </div>
       
       <div class="hero-right">
-        <!-- High-fidelity simulated video player component -->
         <div class="simulated-player-container w-full max-w-[440px] aspect-[4/5] bg-zinc-950 border border-zinc-800 rounded-none relative overflow-hidden group shadow-2xl">
           <img src="/dr_ben_headshot.png" alt="Dr. Ben Johnson III" class="absolute inset-0 w-full h-full object-cover grayscale contrast-110 opacity-70 group-hover:grayscale-0 group-hover:opacity-80 transition-all duration-700">
           
-          <!-- Glassmorphic player overlay -->
           <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent flex flex-col justify-between p-6">
-            <!-- Top stats / mode indicators -->
             <div class="flex justify-between items-center w-full">
               <span class="px-3 py-1 bg-amber-500/10 border border-amber-500/30 rounded text-[9px] font-mono text-amber-500 uppercase tracking-widest flex items-center gap-1.5 animate-pulse">
                 <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span> Live Media Briefing
@@ -200,7 +198,6 @@
               <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-wider">01 / SEC_A</span>
             </div>
 
-            <!-- Speech visualizer wave in the center (active when playing) -->
             <div class="flex justify-center items-end gap-1 h-12 w-full my-auto opacity-80" id="hero-player-wave">
               <div class="w-1 bg-amber-500 rounded-full h-2 transition-all duration-300"></div>
               <div class="w-1 bg-amber-500 rounded-full h-4 transition-all duration-300"></div>
@@ -209,25 +206,21 @@
               <div class="w-1 bg-amber-500 rounded-full h-5 transition-all duration-300"></div>
             </div>
 
-            <!-- Closed Captions (Scrolling script track) -->
             <div class="w-full bg-black/75 border border-zinc-800/80 px-4 py-3 rounded-lg text-center min-h-[70px] flex items-center justify-center">
               <p id="hero-player-cc" class="text-xs sm:text-sm text-zinc-200 font-sans tracking-wide leading-relaxed italic">
                 "My name is Dr. Ben Johnson III. I believe most people are not stuck because they lack talent..."
               </p>
             </div>
 
-            <!-- Controls overlay -->
             <div class="w-full flex items-center justify-between mt-4 pt-3 border-t border-zinc-900/60">
               <button id="hero-player-play-btn" class="w-10 h-10 rounded-full bg-amber-500 hover:bg-amber-600 text-black flex items-center justify-center cursor-pointer border-none outline-none transition-all shadow-lg hover:scale-105 active:scale-95">
                 <i class="fa-solid fa-pause text-sm" id="hero-play-icon"></i>
               </button>
               
-              <!-- Custom Scrubber timeline -->
               <div class="flex-grow mx-4 relative h-1 bg-zinc-800 rounded-full overflow-hidden cursor-pointer" id="hero-player-timeline">
                 <div id="hero-player-progress" class="absolute left-0 top-0 bottom-0 bg-amber-500 transition-all duration-100" style="width: 0%;"></div>
               </div>
 
-              <!-- Mute / Unmute button -->
               <button id="hero-player-mute-btn" class="text-zinc-400 hover:text-white transition-colors bg-transparent border-none cursor-pointer outline-none">
                 <i class="fa-solid fa-volume-xmark text-md" id="hero-mute-icon"></i>
               </button>
@@ -240,13 +233,10 @@
 
   <div class="blueprint-line-h"></div>
 
-  <!-- Section 1.5: Story, Authority & Framework UI -->
+  <!-- Section 1.5: Story & 5 Core Principles -->
   <section id="story-framework" class="py-20 bg-[#0e0e10] relative overflow-hidden border-b border-zinc-900">
     <div class="container">
-      
-      <!-- Biography & 8% Mindset Grid -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-20">
-        <!-- Biography -->
         <div class="lg:col-span-7 space-y-6">
           <span class="text-xs font-mono uppercase tracking-widest text-[#D97706] font-bold block">// DR. BEN'S STORY</span>
           <h2 class="text-4xl font-extrabold text-white uppercase tracking-tight" style="font-family: var(--font-montserrat);">The Blizzard Route</h2>
@@ -260,7 +250,6 @@
           </div>
         </div>
 
-        <!-- 8% Mindset Block -->
         <div class="lg:col-span-5 bg-zinc-900 border border-zinc-800 p-8 relative flex flex-col justify-between min-h-[300px]">
           <div class="absolute top-0 right-0 w-2 h-2 bg-amber-500"></div>
           <span class="text-[10px] font-mono uppercase tracking-widest text-zinc-500 mb-6 block">METRIC_AUDIT // SEC_A</span>
@@ -275,17 +264,15 @@
         </div>
       </div>
 
-      <!-- Stylized Mission Quote Banner -->
       <div class="w-full text-center py-20 px-6 bg-gradient-to-b from-[#131315]/40 to-[#09090b]/80 border-y border-zinc-800/80 mb-20 relative">
         <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#D97706]/10 border border-[#D97706]/20 text-[#D97706] text-[9px] font-mono uppercase tracking-widest">
           MISSION STATEMENT
         </div>
-        <p class="text-3xl sm:text-5xl font-black uppercase text-white tracking-widest leading-tight max-w-5xl mx-auto" style="font-family: var(--font-montserrat); text-shadow: 0 0 30px rgba(255,255,255,0.02);">
+        <p class="text-3xl sm:text-5xl font-black uppercase text-white tracking-widest leading-tight max-w-5xl mx-auto" style="font-family: var(--font-montserrat);">
           "I help ordinary people become the <span class="text-[#D97706]">possible people</span> doing the impossible."
         </p>
       </div>
 
-      <!-- The 5 Core Principles Blueprint -->
       <div class="space-y-12">
         <div class="section-header-blueprint">
           <div>
@@ -296,81 +283,61 @@
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-          
-          <!-- Principle 1 -->
-          <div class="bg-zinc-950 border border-zinc-800 p-6 flex flex-col justify-between min-h-[260px] neon-glow-card transition-all duration-300">
+          <div class="bg-zinc-950 border border-zinc-800 p-6 flex flex-col justify-between min-h-[260px]">
             <div>
               <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-500 mb-6">
                 <i class="fa-solid fa-compass text-lg"></i>
               </div>
-              <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-2" style="font-family: var(--font-montserrat);">1. AIM</h4>
+              <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-2">1. AIM</h4>
             </div>
-            <p class="text-xs text-zinc-400 leading-relaxed font-sans mt-2">
-              Active Intentional Movement. The baseline requirement. God does not align steps that are not in active motion.
-            </p>
+            <p class="text-xs text-zinc-400 leading-relaxed font-sans mt-2">Active Intentional Movement. The baseline requirement. God does not align steps that are not in active motion.</p>
           </div>
 
-          <!-- Principle 2 -->
-          <div class="bg-zinc-950 border border-zinc-800 p-6 flex flex-col justify-between min-h-[260px] neon-glow-card transition-all duration-300">
+          <div class="bg-zinc-950 border border-zinc-800 p-6 flex flex-col justify-between min-h-[260px]">
             <div>
               <div class="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 mb-6">
                 <i class="fa-solid fa-shield-halved text-lg"></i>
               </div>
-              <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-2" style="font-family: var(--font-montserrat);">2. Identity</h4>
+              <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-2">2. Identity</h4>
             </div>
-            <p class="text-xs text-zinc-400 leading-relaxed font-sans mt-2">
-              Locking down your divine coordinates and standing firm under Kingdom design, refusing cultural drift.
-            </p>
+            <p class="text-xs text-zinc-400 leading-relaxed font-sans mt-2">Locking down your divine coordinates and standing firm under Kingdom design, refusing cultural drift.</p>
           </div>
 
-          <!-- Principle 3 -->
-          <div class="bg-zinc-950 border border-zinc-800 p-6 flex flex-col justify-between min-h-[260px] neon-glow-card transition-all duration-300">
+          <div class="bg-zinc-950 border border-zinc-800 p-6 flex flex-col justify-between min-h-[260px]">
             <div>
               <div class="w-10 h-10 rounded-xl bg-red-500/10 border border-red-500/30 flex items-center justify-center text-red-500 mb-6">
                 <i class="fa-solid fa-crosshairs text-lg"></i>
               </div>
-              <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-2" style="font-family: var(--font-montserrat);">3. Identify Giant</h4>
+              <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-2">3. Identify Giant</h4>
             </div>
-            <p class="text-xs text-zinc-400 leading-relaxed font-sans mt-2">
-              Exposing the exact root of your fear or cognitive defense mechanism. Giving the bottleneck a name.
-            </p>
+            <p class="text-xs text-zinc-400 leading-relaxed font-sans mt-2">Exposing the exact root of your fear or cognitive defense mechanism. Giving the bottleneck a name.</p>
           </div>
 
-          <!-- Principle 4 -->
-          <div class="bg-zinc-950 border border-zinc-800 p-6 flex flex-col justify-between min-h-[260px] neon-glow-card transition-all duration-300">
+          <div class="bg-zinc-950 border border-zinc-800 p-6 flex flex-col justify-between min-h-[260px]">
             <div>
               <div class="w-10 h-10 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-500 mb-6">
                 <i class="fa-solid fa-bolt-lightning text-lg"></i>
               </div>
-              <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-2" style="font-family: var(--font-montserrat);">4. Action</h4>
+              <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-2">4. Action</h4>
             </div>
-            <p class="text-xs text-zinc-400 leading-relaxed font-sans mt-2">
-              Executing immediate high-agency decisions to sever procrastination and comfortable passive habits.
-            </p>
+            <p class="text-xs text-zinc-400 leading-relaxed font-sans mt-2">Executing immediate high-agency decisions to sever procrastination and comfortable passive habits.</p>
           </div>
 
-          <!-- Principle 5 -->
-          <div class="bg-zinc-950 border border-zinc-800 p-6 flex flex-col justify-between min-h-[260px] neon-glow-card transition-all duration-300">
+          <div class="bg-zinc-950 border border-zinc-800 p-6 flex flex-col justify-between min-h-[260px]">
             <div>
               <div class="w-10 h-10 rounded-xl bg-yellow-500/10 border border-yellow-500/30 flex items-center justify-center text-yellow-500 mb-6">
                 <i class="fa-solid fa-crown text-lg"></i>
               </div>
-              <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-2" style="font-family: var(--font-montserrat);">5. Victory</h4>
+              <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-2">5. Victory</h4>
             </div>
-            <p class="text-xs text-zinc-400 leading-relaxed font-sans mt-2">
-              Securing reclaimed territory, establishing unshakeable systems, and mentoring others to conquer.
-            </p>
+            <p class="text-xs text-zinc-400 leading-relaxed font-sans mt-2">Securing reclaimed territory, establishing unshakeable systems, and mentoring others to conquer.</p>
           </div>
-
         </div>
       </div>
-
     </div>
   </section>
 
   <div class="blueprint-line-h"></div>
-
-
 
   <!-- Section 2: Core Problem Context (The Friction) -->
   <section class="problem-section section-gap bg-[#09090B]" id="friction">
@@ -383,12 +350,11 @@
         <span class="label-caps" style="color: var(--text-muted);">SYSTEMS DECONSTRUCTION</span>
       </div>
 
-      <!-- Interactive Hooks -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
         <div class="bg-[#121214] border border-zinc-800 p-8 rounded-none relative group hover:border-[#D97706]/40 transition-all duration-300">
           <div class="absolute top-0 left-0 w-full h-1 bg-[#D97706]/20 group-hover:bg-[#D97706] transition-all duration-300"></div>
           <span class="text-[10px] font-mono uppercase tracking-widest text-[#D97706] block mb-4">DIAGNOSTIC_01</span>
-          <h3 class="text-xl font-bold text-white uppercase tracking-wide mb-3" style="font-family: var(--font-montserrat);">Do you feel stuck?</h3>
+          <h3 class="text-xl font-bold text-white uppercase tracking-wide mb-3">Do you feel stuck?</h3>
           <p class="text-zinc-400 text-sm leading-relaxed">
             Waking up day after day feeling like you are running in place. You have the drive and capacity, but your next direction is completely bottlenecked by invisible boundaries.
           </p>
@@ -397,7 +363,7 @@
         <div class="bg-[#121214] border border-zinc-800 p-8 rounded-none relative group hover:border-[#D97706]/40 transition-all duration-300">
           <div class="absolute top-0 left-0 w-full h-1 bg-[#D97706]/20 group-hover:bg-[#D97706] transition-all duration-300"></div>
           <span class="text-[10px] font-mono uppercase tracking-widest text-[#D97706] block mb-4">DIAGNOSTIC_02</span>
-          <h3 class="text-xl font-bold text-white uppercase tracking-wide mb-3" style="font-family: var(--font-montserrat);">Are fear & doubt controlling you?</h3>
+          <h3 class="text-xl font-bold text-white uppercase tracking-wide mb-3">Are fear & doubt controlling you?</h3>
           <p class="text-zinc-400 text-sm leading-relaxed">
             Letting the shadow of giant obstacles determine where you expand your leadership, business, or ministry. Intimidation has dictated the limits of your territory.
           </p>
@@ -406,20 +372,17 @@
         <div class="bg-[#121214] border border-zinc-800 p-8 rounded-none relative group hover:border-[#D97706]/40 transition-all duration-300">
           <div class="absolute top-0 left-0 w-full h-1 bg-[#D97706]/20 group-hover:bg-[#D97706] transition-all duration-300"></div>
           <span class="text-[10px] font-mono uppercase tracking-widest text-[#D97706] block mb-4">DIAGNOSTIC_03</span>
-          <h3 class="text-xl font-bold text-white uppercase tracking-wide mb-3" style="font-family: var(--font-montserrat);">Busy but going nowhere?</h3>
+          <h3 class="text-xl font-bold text-white uppercase tracking-wide mb-3">Busy but going nowhere?</h3>
           <p class="text-zinc-400 text-sm leading-relaxed">
             Exhausting yourself in the operations, spinning wheels on secondary tasks while the major, purpose-driven moves remain completely untouched.
           </p>
         </div>
       </div>
 
-      <!-- AIM System Value Proposition -->
       <div class="bg-zinc-950 border border-zinc-800/60 p-8 sm:p-12 mt-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         <div class="lg:col-span-7 space-y-4">
           <span class="text-xs font-mono uppercase tracking-widest text-[#D97706] font-bold block">// CORE THESIS</span>
-          <h3 class="text-3xl font-black text-white uppercase" style="font-family: var(--font-montserrat);">
-            Movement Creates Clarity.
-          </h3>
+          <h3 class="text-3xl font-black text-white uppercase">Movement Creates Clarity.</h3>
           <p class="text-zinc-400 text-md leading-relaxed">
             People don't find purpose sitting still in the valley. Inactivity breeds cognitive loops, fear, and hesitation. The AIM System is a direct, systematic architecture to shift you from passive defense into strategic offense. God does not align steps that are not in motion.
           </p>
@@ -444,7 +407,7 @@
 
   <div class="blueprint-line-h"></div>
 
-  <!-- Standalone Asset Showcase Module (Reordered Location) -->
+  <!-- STANDALONE ASSET SHOWCASE MODULE (POSITIONED BETWEEN MATRIX & VOICE PORTAL) -->
   <section id="standalone-assets" class="py-20 px-6 bg-[#09090B] border-t border-zinc-800/80">
     <div class="container max-w-6xl mx-auto">
       <div class="section-header-blueprint mb-12">
@@ -517,18 +480,10 @@
         <div class="bg-zinc-950 border border-zinc-800 p-5 flex flex-col justify-between h-[420px] relative overflow-hidden group">
           <div class="absolute inset-0 bg-[#D97706]/5 group-hover:bg-[#D97706]/10 transition-colors pointer-events-none"></div>
           
-          <!-- Mock short video poster/canvas -->
           <div class="w-full h-44 bg-zinc-900 border border-zinc-800 relative overflow-hidden flex items-center justify-center">
             <img src="/dr_ben_headshot.png" alt="Comfort Drift poster" class="w-full h-full object-cover grayscale brightness-50 group-hover:scale-105 transition-transform duration-500">
             <div class="absolute w-12 h-12 rounded-full bg-black/80 border border-amber-500/40 flex items-center justify-center text-amber-500 group-hover:bg-amber-500 group-hover:text-black transition-colors cursor-pointer">
               <i class="fa-solid fa-play text-xs ml-0.5"></i>
-            </div>
-            <!-- Interactive visualizer loop on hover -->
-            <div class="absolute bottom-2 left-2 right-2 flex justify-center items-end gap-0.5 h-6 opacity-0 group-hover:opacity-100 transition-opacity">
-              <span class="w-1 bg-amber-500 h-2 animate-pulse"></span>
-              <span class="w-1 bg-amber-500 h-4 animate-pulse" style="animation-delay: 0.1s"></span>
-              <span class="w-1 bg-amber-500 h-6 animate-pulse" style="animation-delay: 0.2s"></span>
-              <span class="w-1 bg-amber-500 h-3 animate-pulse" style="animation-delay: 0.3s"></span>
             </div>
           </div>
 
@@ -540,7 +495,6 @@
             </p>
           </div>
 
-          <!-- Conversion Layer -->
           <button class="nugget-cta-btn w-full py-3 bg-[#121214] hover:bg-[#D97706] hover:text-black text-[#D97706] border border-[#D97706]/30 font-bold text-xs uppercase tracking-wider transition-all duration-300 rounded-none cursor-pointer" data-context="drift">
             I face this giant — Help me AIM
           </button>
@@ -550,18 +504,10 @@
         <div class="bg-zinc-950 border border-zinc-800 p-5 flex flex-col justify-between h-[420px] relative overflow-hidden group">
           <div class="absolute inset-0 bg-[#D97706]/5 group-hover:bg-[#D97706]/10 transition-colors pointer-events-none"></div>
           
-          <!-- Mock short video poster/canvas -->
           <div class="w-full h-44 bg-zinc-900 border border-zinc-800 relative overflow-hidden flex items-center justify-center">
             <img src="/dr_ben_headshot.png" alt="Fear and Rejection poster" class="w-full h-full object-cover grayscale brightness-50 group-hover:scale-105 transition-transform duration-500" style="filter: hue-rotate(90deg) brightness(0.4);">
             <div class="absolute w-12 h-12 rounded-full bg-black/80 border border-amber-500/40 flex items-center justify-center text-amber-500 group-hover:bg-amber-500 group-hover:text-black transition-colors cursor-pointer">
               <i class="fa-solid fa-play text-xs ml-0.5"></i>
-            </div>
-            <!-- Interactive visualizer loop on hover -->
-            <div class="absolute bottom-2 left-2 right-2 flex justify-center items-end gap-0.5 h-6 opacity-0 group-hover:opacity-100 transition-opacity">
-              <span class="w-1 bg-amber-500 h-3 animate-pulse" style="animation-delay: 0.15s"></span>
-              <span class="w-1 bg-amber-500 h-5 animate-pulse" style="animation-delay: 0.05s"></span>
-              <span class="w-1 bg-amber-500 h-2 animate-pulse" style="animation-delay: 0.25s"></span>
-              <span class="w-1 bg-amber-500 h-6 animate-pulse" style="animation-delay: 0.1s"></span>
             </div>
           </div>
 
@@ -573,7 +519,6 @@
             </p>
           </div>
 
-          <!-- Conversion Layer -->
           <button class="nugget-cta-btn w-full py-3 bg-[#121214] hover:bg-[#D97706] hover:text-black text-[#D97706] border border-[#D97706]/30 font-bold text-xs uppercase tracking-wider transition-all duration-300 rounded-none cursor-pointer" data-context="fear">
             I face this giant — Help me AIM
           </button>
@@ -583,18 +528,10 @@
         <div class="bg-zinc-950 border border-zinc-800 p-5 flex flex-col justify-between h-[420px] relative overflow-hidden group">
           <div class="absolute inset-0 bg-[#D97706]/5 group-hover:bg-[#D97706]/10 transition-colors pointer-events-none"></div>
           
-          <!-- Mock short video poster/canvas -->
           <div class="w-full h-44 bg-zinc-900 border border-zinc-800 relative overflow-hidden flex items-center justify-center">
             <img src="/dr_ben_headshot.png" alt="Isolation poster" class="w-full h-full object-cover grayscale brightness-50 group-hover:scale-105 transition-transform duration-500" style="filter: hue-rotate(180deg) brightness(0.4);">
             <div class="absolute w-12 h-12 rounded-full bg-black/80 border border-amber-500/40 flex items-center justify-center text-amber-500 group-hover:bg-amber-500 group-hover:text-black transition-colors cursor-pointer">
               <i class="fa-solid fa-play text-xs ml-0.5"></i>
-            </div>
-            <!-- Interactive visualizer loop on hover -->
-            <div class="absolute bottom-2 left-2 right-2 flex justify-center items-end gap-0.5 h-6 opacity-0 group-hover:opacity-100 transition-opacity">
-              <span class="w-1 bg-amber-500 h-6 animate-pulse" style="animation-delay: 0.05s"></span>
-              <span class="w-1 bg-amber-500 h-2 animate-pulse" style="animation-delay: 0.2s"></span>
-              <span class="w-1 bg-amber-500 h-4 animate-pulse" style="animation-delay: 0.1s"></span>
-              <span class="w-1 bg-amber-500 h-5 animate-pulse" style="animation-delay: 0.3s"></span>
             </div>
           </div>
 
@@ -606,7 +543,6 @@
             </p>
           </div>
 
-          <!-- Conversion Layer -->
           <button class="nugget-cta-btn w-full py-3 bg-[#121214] hover:bg-[#D97706] hover:text-black text-[#D97706] border border-[#D97706]/30 font-bold text-xs uppercase tracking-wider transition-all duration-300 rounded-none cursor-pointer" data-context="alone">
             I face this giant — Help me AIM
           </button>
@@ -617,10 +553,9 @@
 
   <div class="blueprint-line-h"></div>
 
-  <!-- E-book Portal Section -->
+  <!-- Standalone Book Callout Hero Module -->
   <section id="book-portal" class="relative bg-[#121214] py-20 px-6 border-y border-zinc-800/50">
     <div class="max-w-5xl mx-auto">
-      <!-- STANDALONE BOOK HERO CARD -->
       <div class="flex flex-col md:flex-row items-center gap-8 bg-zinc-900/90 border border-zinc-800 p-8 rounded-none shadow-2xl">
         <div class="w-full md:w-1/2 flex justify-center">
           <img src="/book-cover.png" alt="How to Slay Your Giant Book" class="max-h-80 object-contain grayscale contrast-110 hover:grayscale-0 transition duration-500" />
@@ -631,7 +566,6 @@
           <p class="text-zinc-400 text-sm leading-relaxed">
             Every believer faces a valley. Whether it's the giant of fear, rejection, shame, or a capped vision, you weren't created to live intimidated by the obstacles in front of you. Dr. Ben C. Johnson III has weaponized years of deep theological study and raw coaching execution into a direct, digital field manual.
           </p>
-          <!-- UPDATED PRICE BUTTON -->
           <button id="ebook-hero-purchase-btn" class="btn-primary w-full py-4 flex items-center justify-center gap-2">
             <span>🛒</span> Claim Your Copy — $29.95
           </button>
@@ -641,36 +575,6 @@
   </section>
 
   <div class="blueprint-line-h"></div>
-
-  <!-- Voice Hub Lead Capture Modal Gate -->
-  <div id="voice-lead-modal-overlay" class="fixed inset-0 z-[150] hidden bg-black/90 backdrop-blur-md items-center justify-center p-4 opacity-0 transition-opacity duration-300">
-    <div class="bg-[#09090B] w-full max-w-md rounded-3xl border border-amber-500/20 p-8 shadow-2xl shadow-amber-950/20 text-white font-sans text-center">
-      <div class="w-12 h-12 rounded-xl bg-amber-600/20 border border-amber-500/30 flex items-center justify-center text-amber-500 mx-auto mb-4">
-        <i class="fa-solid fa-lock text-xl"></i>
-      </div>
-      <h3 class="text-xl font-bold text-white uppercase tracking-wider mb-2" style="font-family: var(--font-montserrat);">Gate Active: Calibrating System</h3>
-      <p class="text-zinc-400 text-sm mb-6 leading-relaxed">
-        You have used your 2 free transmissions. To unlock unlimited strategic diagnostics with Coach Ben, submit your builder coordinates below.
-      </p>
-      <form id="voice-lead-form" class="space-y-4 text-left">
-        <div>
-          <label class="block text-xs font-mono uppercase tracking-wider text-zinc-500 mb-2">First Name</label>
-          <input type="text" id="voice-lead-name" placeholder="Enter your first name" class="w-full px-4 py-3 bg-[#121214] border border-zinc-800 rounded-xl text-white placeholder-zinc-600 focus:outline-none focus:border-amber-600 font-medium transition-colors" required>
-        </div>
-        <div>
-          <label class="block text-xs font-mono uppercase tracking-wider text-zinc-500 mb-2">Email Address</label>
-          <input type="email" id="voice-lead-email" placeholder="you@domain.com" class="w-full px-4 py-3 bg-[#121214] border border-zinc-800 rounded-xl text-white placeholder-zinc-600 focus:outline-none focus:border-amber-600 font-medium transition-colors" required>
-        </div>
-        <div>
-          <label class="block text-xs font-mono uppercase tracking-wider text-zinc-500 mb-2">Phone Number</label>
-          <input type="tel" id="voice-lead-phone" placeholder="+1 (555) 000-0000" class="w-full px-4 py-3 bg-[#121214] border border-zinc-800 rounded-xl text-white placeholder-zinc-600 focus:outline-none focus:border-amber-600 font-medium transition-colors" required>
-        </div>
-        <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-[#D97706] to-[#B45309] hover:from-[#F59E0B] hover:to-[#D97706] text-white font-bold text-sm uppercase tracking-widest shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 mt-2 cursor-pointer border-none">
-          Establish Secure Access
-        </button>
-      </form>
-    </div>
-  </div>
 
   <!-- Section 3: Digital Twin Portal (Voice Agent Widget) -->
   <section class="portal-section section-gap" id="portal">
@@ -702,7 +606,6 @@
             <span class="label-caps text-zinc-500" style="font-size: 10px;">SYS_ACTIVE_V2.1</span>
           </div>
 
-          <!-- Chat messages view -->
           <div id="portal-chat-messages" class="flex-grow w-full overflow-y-auto space-y-4 px-2 py-3 text-sm font-sans mb-3 flex flex-col max-h-[300px]">
             <div class="text-zinc-500 font-mono text-center text-xs pb-2 border-b border-zinc-900/60">[ INITIALIZING VOICE CHANNEL ]</div>
             <div class="bg-zinc-900/50 border border-zinc-800 p-3 rounded-lg text-zinc-300">
@@ -710,7 +613,6 @@
             </div>
           </div>
 
-          <!-- Interactive mic indicator visualizer -->
           <div class="flex items-center justify-between bg-zinc-950/60 border border-zinc-900 px-4 py-3 rounded-xl w-full mb-3 gap-4">
             <div class="portal-avatar-wrapper h-16 w-16 min-w-[64px] m-0" id="portal-avatar-wrapper" style="width: 64px; height: 64px;">
               <div class="portal-pulse-ring"></div>
@@ -731,7 +633,6 @@
             </div>
           </div>
 
-          <!-- Input console panel -->
           <div class="w-full border-t border-zinc-800 pt-3">
             <form id="portal-chat-form" class="flex gap-2 w-full">
               <input type="text" id="portal-chat-input" placeholder="Type your stagnation / ask Coach Ben..." class="flex-grow bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 text-xs text-white placeholder-zinc-600 focus:outline-none focus:border-amber-500/50">
@@ -747,8 +648,7 @@
 
   <div class="blueprint-line-h"></div>
 
-
-  <!-- Section 4: Methodology Breakdown (Steps) -->
+  <!-- Section 4: Methodology Breakdown -->
   <section class="method-section section-gap" id="methodology">
     <div class="container">
       <div class="section-header-blueprint">
@@ -762,7 +662,6 @@
       <p class="max-w-2xl mx-auto text-center font-normal leading-relaxed text-zinc-400 text-lg mb-12">True victory requires more than temporary motivation. We apply Dr. Ben’s definitive AIM principles to realign your path with Kingdom authority:</p>
 
       <div class="method-steps">
-        <!-- Step 1 -->
         <div class="method-step">
           <span class="method-num">01</span>
           <h3 class="headline-md method-title">A — Alignment</h3>
@@ -771,7 +670,6 @@
           </p>
         </div>
 
-        <!-- Step 2 -->
         <div class="method-step">
           <span class="method-num">02</span>
           <h3 class="headline-md method-title">I — Intention</h3>
@@ -780,7 +678,6 @@
           </p>
         </div>
 
-        <!-- Step 3 -->
         <div class="method-step">
           <span class="method-num">03</span>
           <h3 class="headline-md method-title">M — Mindset</h3>
@@ -792,104 +689,17 @@
     </div>
   </section>
 
-  <!-- Section 5: The Wall of Transformation (Victory Wall) -->
+  <!-- Section 5: Victory Wall -->
   <section class="wall-section" id="transformation" style="background-color: var(--warm-parchment); color: #1a1c1c;">
-    <!-- Backdrop overlay for zoomed cards -->
     <div class="card-backdrop-overlay" id="card-backdrop-overlay"></div>
 
     <div class="container">
-      
-      <!-- Testimony Intake Form Modal Overlay -->
-      <div id="testimony-modal-overlay" class="fixed inset-0 z-[150] hidden bg-black/70 backdrop-blur-sm items-center justify-center p-4 transition-opacity duration-300 opacity-0">
-        <div class="bg-[#121214] rounded-2xl border border-zinc-800 p-6 max-w-md w-full relative text-white font-sans">
-          
-          <!-- Close Button -->
-          <button id="testimony-close-btn" class="absolute top-4 right-4 text-zinc-400 hover:text-white transition-colors bg-transparent border-none cursor-pointer outline-none">
-            <i class="fa-solid fa-xmark text-lg"></i>
-          </button>
-
-          <div class="flex items-center gap-3 mb-6">
-            <div class="w-8 h-8 rounded-lg bg-amber-600/20 border border-amber-500/30 flex items-center justify-center text-amber-500">
-              <i class="fa-solid fa-scroll text-sm"></i>
-            </div>
-            <div>
-              <h4 class="text-md font-bold text-white tracking-wide">Share Your Breakthrough</h4>
-              <span class="text-[10px] font-mono uppercase tracking-widest text-zinc-500">Transformation Wall</span>
-            </div>
-          </div>
-
-          <form id="testimony-form" class="space-y-4">
-            <div>
-              <label class="block text-xs font-mono uppercase tracking-widest text-zinc-400 mb-1">Your Name</label>
-              <input type="text" id="testimony-name" class="w-full bg-zinc-900 border border-zinc-800 focus:border-amber-500/50 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none transition-colors" placeholder="e.g. Robert H." required>
-            </div>
-
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <label class="block text-xs font-mono uppercase tracking-widest text-zinc-400 mb-1">Category</label>
-                <select id="testimony-category" class="w-full bg-zinc-900 border border-zinc-800 focus:border-amber-500/50 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none transition-colors cursor-pointer" required>
-                  <option value="career">Career</option>
-                  <option value="purpose">Purpose</option>
-                  <option value="habits">Breaking Habits</option>
-                  <option value="financial">Financial Breakthrough</option>
-                </select>
-              </div>
-              <div>
-                <label class="block text-xs font-mono uppercase tracking-widest text-zinc-400 mb-1">Your Prior Giant</label>
-                <input type="text" id="testimony-battle" class="w-full bg-zinc-900 border border-zinc-800 focus:border-amber-500/50 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none transition-colors" placeholder="e.g. Procrastination" required>
-              </div>
-            </div>
-
-            <div>
-              <label class="block text-xs font-mono uppercase tracking-widest text-zinc-400 mb-1">The Breakthrough Testimony</label>
-              <textarea id="testimony-text" rows="3" class="w-full bg-zinc-900 border border-zinc-800 focus:border-amber-500/50 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none transition-colors resize-none" placeholder="How did you AIM and slay your giant?" required></textarea>
-            </div>
-
-            <!-- Native browser audio recorder snippet -->
-            <div class="border border-zinc-800 rounded-xl p-4 bg-zinc-950/40 space-y-3">
-              <div class="flex justify-between items-center">
-                <span class="text-xs font-mono uppercase tracking-wider text-zinc-400 flex items-center gap-1">
-                  <i class="fa-solid fa-microphone text-amber-500" id="rec-mic-icon"></i> Voice Note (Max 30s)
-                </span>
-                <span id="record-timer" class="text-xs font-mono text-zinc-500">00:00</span>
-              </div>
-              
-              <div class="flex gap-2">
-                <button type="button" id="record-btn" class="flex-grow py-2 px-3 bg-red-950/40 hover:bg-red-900/50 border border-red-800/40 hover:border-red-500/50 text-red-400 rounded-lg text-xs font-mono uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer transition-colors">
-                  <i class="fa-solid fa-circle text-[8px] animate-pulse"></i> Record
-                </button>
-                <button type="button" id="record-stop-btn" class="py-2 px-3 bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 text-white rounded-lg text-xs font-mono uppercase tracking-wider cursor-pointer transition-colors" disabled>
-                  Stop
-                </button>
-              </div>
-
-              <!-- Audio playback preview container -->
-              <div id="audio-preview-container" class="hidden flex items-center gap-2 pt-2 border-t border-zinc-900">
-                <button type="button" id="record-play-btn" class="w-8 h-8 rounded-full bg-amber-500 text-black flex items-center justify-center cursor-pointer border-none outline-none text-xs">
-                  <i class="fa-solid fa-play"></i>
-                </button>
-                <div class="flex-grow h-1.5 bg-zinc-800 rounded-full overflow-hidden">
-                  <div id="audio-preview-progress" class="h-full bg-amber-500" style="width: 0%;"></div>
-                </div>
-                <span class="text-[10px] font-mono text-zinc-400">Preview</span>
-              </div>
-            </div>
-
-            <button type="submit" id="finalize-testimony-btn" class="w-full py-3.5 bg-[#D97706] hover:bg-[#B45309] text-white text-sm font-bold rounded-xl shadow transition-colors cursor-pointer border-none outline-none uppercase tracking-wider">
-              [ 📜 Pin My Breakthrough to the Wall ]
-            </button>
-          </form>
-
-        </div>
-      </div>
-
       <div class="section-header-blueprint">
         <div>
           <span class="label-caps section-label">05 / COMMUNITY PROOF</span>
           <h2 class="serif-display section-title" style="margin-top: 12px;">The Victory Wall</h2>
         </div>
         <div class="flex items-center gap-4">
-          <span class="label-caps hidden md:inline" style="color: var(--text-muted); font-family: var(--font-playfair); font-style: italic; margin-right: 16px;">Kingdom Breakthroughs</span>
           <button id="submit-testimony-btn" class="font-mono text-xs uppercase tracking-wider border border-amber-500/30 text-amber-500 bg-amber-500/5 hover:bg-amber-500/10 px-5 py-2.5 rounded-xl transition-all cursor-pointer outline-none">
             [ Share Breakthrough ]
           </button>
@@ -900,19 +710,7 @@
         A collective record of giants slain. Click on any card to zoom into their testimony and play their recorded voice note.
       </p>
 
-      <!-- Category Filter Chips -->
-      <div class="flex flex-wrap gap-2.5 mb-10 items-center justify-center sm:justify-start">
-        <button class="category-chip active px-4 py-2 border border-zinc-300 text-xs font-mono uppercase tracking-wider bg-transparent text-zinc-800 rounded-full cursor-pointer hover:border-zinc-800" data-filter="all">All Breakthroughs</button>
-        <button class="category-chip px-4 py-2 border border-zinc-300 text-xs font-mono uppercase tracking-wider bg-transparent text-zinc-800 rounded-full cursor-pointer hover:border-zinc-800" data-filter="career">Career</button>
-        <button class="category-chip px-4 py-2 border border-zinc-300 text-xs font-mono uppercase tracking-wider bg-transparent text-zinc-800 rounded-full cursor-pointer hover:border-zinc-800" data-filter="purpose">Purpose</button>
-        <button class="category-chip px-4 py-2 border border-zinc-300 text-xs font-mono uppercase tracking-wider bg-transparent text-zinc-800 rounded-full cursor-pointer hover:border-zinc-800" data-filter="habits">Breaking Habits</button>
-        <button class="category-chip px-4 py-2 border border-zinc-300 text-xs font-mono uppercase tracking-wider bg-transparent text-zinc-800 rounded-full cursor-pointer hover:border-zinc-800" data-filter="financial">Financial Breakthrough</button>
-      </div>
-
-      <!-- Masonry Brick Grid Container -->
       <div class="victory-wall-masonry" id="victory-wall-grid">
-        
-        <!-- Card 1 -->
         <div class="wall-masonry-card card-dark" data-category="career" style="--rot: -1.2deg; --z: 10;">
           <div class="wall-card-meta">
             <span class="wall-card-author">Robert H. (Tech Founder)</span>
@@ -922,20 +720,12 @@
             "I had built a massive software enterprise but felt completely stuck in operational fog. Dr. Ben forced me to stop over-intellectualizing my fear of letting go. Slaying that giant saved my company and restored my marriage."
           </p>
           <div class="flex justify-between items-center w-full">
-            <div class="testimony-audio-indicator flex items-center gap-2" data-audio-src="simulated_audio_1">
-              <span class="w-0.5 h-3 bg-amber-500 inline-block"></span>
-              <span class="w-0.5 h-3 bg-amber-500 inline-block"></span>
-              <span class="w-0.5 h-3 bg-amber-500 inline-block"></span>
-              <span class="text-[9px] font-mono text-zinc-400 tracking-wider uppercase ml-1">[ Audio Note ]</span>
-            </div>
             <div class="stamped-badge">
-              <div class="stamped-badge-icon"></div>
               <span class="stamped-badge-text">[ SLAYED ]</span>
             </div>
           </div>
         </div>
 
-        <!-- Card 2 -->
         <div class="wall-masonry-card" data-category="purpose" style="--rot: 1deg; --z: 11;">
           <div class="wall-card-meta">
             <span class="wall-card-author">Sarah L. (Educator)</span>
@@ -945,401 +735,12 @@
             "I spent five years waiting for the 'perfect timing' to launch my academy, completely paralyzed by comfort drift. The AIM system recalibrated my identity. I moved first, and the doors opened immediately."
           </p>
           <div class="flex justify-between items-center w-full">
-            <div class="testimony-audio-indicator flex items-center gap-2" data-audio-src="simulated_audio_2">
-              <span class="w-0.5 h-3 bg-[#D97706] inline-block"></span>
-              <span class="w-0.5 h-3 bg-[#D97706] inline-block"></span>
-              <span class="w-0.5 h-3 bg-[#D97706] inline-block"></span>
-              <span class="text-[9px] font-mono text-zinc-500 tracking-wider uppercase ml-1">[ Audio Note ]</span>
-            </div>
             <div class="stamped-badge">
-              <div class="stamped-badge-icon"></div>
               <span class="stamped-badge-text">[ SLAYED ]</span>
             </div>
           </div>
         </div>
-
-        <!-- Card 3 -->
-        <div class="wall-masonry-card card-dark" data-category="habits" style="--rot: -2deg; --z: 12;">
-          <div class="wall-card-meta">
-            <span class="wall-card-author">David M. (Sales VP)</span>
-            <span class="wall-card-date">JAN 2026</span>
-          </div>
-          <p class="wall-card-body">
-            "Procrastination was my silent partner. I was highly active but getting nothing done because I was avoiding the hard calls. Slaying the giant of rejection meant picking up the phone. I severed the passive loops."
-          </p>
-          <div class="flex justify-between items-center w-full">
-            <div class="testimony-audio-indicator flex items-center gap-2" data-audio-src="simulated_audio_3">
-              <span class="w-0.5 h-3 bg-amber-500 inline-block"></span>
-              <span class="w-0.5 h-3 bg-amber-500 inline-block"></span>
-              <span class="w-0.5 h-3 bg-amber-500 inline-block"></span>
-              <span class="text-[9px] font-mono text-zinc-400 tracking-wider uppercase ml-1">[ Audio Note ]</span>
-            </div>
-            <div class="stamped-badge">
-              <div class="stamped-badge-icon"></div>
-              <span class="stamped-badge-text">[ SLAYED ]</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="wall-masonry-card" data-category="financial" style="--rot: 1.5deg; --z: 13;">
-          <div class="wall-card-meta">
-            <span class="wall-card-author">Marcus T. (Real Estate)</span>
-            <span class="wall-card-date">FEB 2026</span>
-          </div>
-          <p class="wall-card-body">
-            "I had a financial ceiling I couldn't break for four years. Through AIM alignment, I recognized my hidden pride—believing I had to carry the empire alone. Once I aligned with covenant partners, the stagnation broke."
-          </p>
-          <div class="flex justify-between items-center w-full">
-            <div class="testimony-audio-indicator flex items-center gap-2" data-audio-src="simulated_audio_4">
-              <span class="w-0.5 h-3 bg-[#D97706] inline-block"></span>
-              <span class="w-0.5 h-3 bg-[#D97706] inline-block"></span>
-              <span class="w-0.5 h-3 bg-[#D97706] inline-block"></span>
-              <span class="text-[9px] font-mono text-zinc-500 tracking-wider uppercase ml-1">[ Audio Note ]</span>
-            </div>
-            <div class="stamped-badge">
-              <div class="stamped-badge-icon"></div>
-              <span class="stamped-badge-text">[ SLAYED ]</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 5 -->
-        <div class="wall-masonry-card card-dark" data-category="purpose" style="--rot: -1deg; --z: 14;">
-          <div class="wall-card-meta">
-            <span class="wall-card-author">Elizabeth G. (COO)</span>
-            <span class="wall-card-date">APR 2026</span>
-          </div>
-          <p class="wall-card-body">
-            "I achieved my career metrics but woke up empty. Dr. Ben's deconstruction stripped away my executive shield. Exposing my underlying drift allowed me to align my career with my divine calling."
-          </p>
-          <div class="flex justify-between items-center w-full">
-            <div class="testimony-audio-indicator flex items-center gap-2" data-audio-src="simulated_audio_5">
-              <span class="w-0.5 h-3 bg-amber-500 inline-block"></span>
-              <span class="w-0.5 h-3 bg-amber-500 inline-block"></span>
-              <span class="w-0.5 h-3 bg-amber-500 inline-block"></span>
-              <span class="text-[9px] font-mono text-zinc-400 tracking-wider uppercase ml-1">[ Audio Note ]</span>
-            </div>
-            <div class="stamped-badge">
-              <div class="stamped-badge-icon"></div>
-              <span class="stamped-badge-text">[ SLAYED ]</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 6 -->
-        <div class="wall-masonry-card" data-category="habits" style="--rot: 2.2deg; --z: 15;">
-          <div class="wall-card-meta">
-            <span class="wall-card-author">Jonathan K. (Physician)</span>
-            <span class="wall-card-date">MAY 2026</span>
-          </div>
-          <p class="wall-card-body">
-            "Dr. Ben does not offer basic self-help. He executes high-intensity cognitive recalibration. I broke free from years of mental loops and decision fatigue. Now I move with sovereign intention."
-          </p>
-          <div class="flex justify-between items-center w-full">
-            <div class="testimony-audio-indicator flex items-center gap-2" data-audio-src="simulated_audio_6">
-              <span class="w-0.5 h-3 bg-[#D97706] inline-block"></span>
-              <span class="w-0.5 h-3 bg-[#D97706] inline-block"></span>
-              <span class="w-0.5 h-3 bg-[#D97706] inline-block"></span>
-              <span class="text-[9px] font-mono text-zinc-500 tracking-wider uppercase ml-1">[ Audio Note ]</span>
-            </div>
-            <div class="stamped-badge">
-              <div class="stamped-badge-icon"></div>
-              <span class="stamped-badge-text">[ SLAYED ]</span>
-            </div>
-          </div>
-        </div>
-
       </div>
-    </div>
-  </section>
-
-  <div class="blueprint-line-h"></div>
-
-  <!-- Section 5.1: Interactive Roadblock Quiz -->
-  <section id="roadblock-quiz" class="py-20 bg-[#09090B] border-b border-zinc-900">
-    <div class="container">
-      <div class="section-header-blueprint mb-12">
-        <div>
-          <span class="label-caps section-label">05.1 / AUDIT PROTOCOL</span>
-          <h2 class="text-4xl font-bold text-white tracking-tight uppercase" style="font-family: var(--font-montserrat);">The Roadblock Diagnostic Quiz</h2>
-        </div>
-        <span class="label-caps" style="color: var(--text-muted);">VECOTR ANALYSIS</span>
-      </div>
-
-      <p class="text-zinc-400 text-md max-w-xl mb-12">
-        Identify the exact vector bottlenecking your purpose. This 10-question strategic diagnostic scores your primary roadblocks across 4 dimensions: Physical, Mental, Emotional, or Social.
-      </p>
-
-      <div class="max-w-2xl mx-auto bg-[#121214] border border-zinc-800 p-8 rounded-none shadow-2xl relative" id="quiz-container">
-        <!-- Progress Indicator -->
-        <div class="flex justify-between items-center mb-6 border-b border-zinc-900 pb-4">
-          <span id="quiz-question-number" class="text-xs font-mono text-amber-500 uppercase tracking-widest font-bold">Question 1 of 10</span>
-          <div class="w-32 h-1 bg-zinc-800 rounded-full overflow-hidden">
-            <div id="quiz-progress" class="h-full bg-amber-500 transition-all duration-300" style="width: 10%;"></div>
-          </div>
-        </div>
-
-        <!-- Quiz Questions Viewport -->
-        <div id="quiz-question-container" class="min-h-[220px]">
-          <!-- Questions will be injected dynamically via JS -->
-          <div class="quiz-step-slide" data-index="0">
-            <h3 class="text-xl font-bold text-white mb-6 font-sans">Which statement best describes your current execution loop?</h3>
-            <div class="space-y-3">
-              <button class="quiz-option-btn w-full p-4 bg-zinc-900 hover:bg-zinc-900/80 border border-zinc-800 hover:border-amber-500/50 text-left text-zinc-300 hover:text-white rounded-none cursor-pointer transition-all text-sm" data-vector="M">
-                A) I know exactly what I need to do, but I map plans endlessly without starting.
-              </button>
-              <button class="quiz-option-btn w-full p-4 bg-zinc-900 hover:bg-zinc-900/80 border border-zinc-800 hover:border-amber-500/50 text-left text-zinc-300 hover:text-white rounded-none cursor-pointer transition-all text-sm" data-vector="P">
-                B) I start with passion, but run out of physical stamina and focus halfway.
-              </button>
-              <button class="quiz-option-btn w-full p-4 bg-zinc-900 hover:bg-zinc-900/80 border border-zinc-800 hover:border-amber-500/50 text-left text-zinc-300 hover:text-white rounded-none cursor-pointer transition-all text-sm" data-vector="E">
-                C) I am paralyzed from executing because I fear failure or negative judgment.
-              </button>
-              <button class="quiz-option-btn w-full p-4 bg-zinc-900 hover:bg-zinc-900/80 border border-zinc-800 hover:border-amber-500/50 text-left text-zinc-300 hover:text-white rounded-none cursor-pointer transition-all text-sm" data-vector="S">
-                D) I am surrounded by peer voices that counsel safety and discourage expansion.
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="blueprint-line-h"></div>
-
-  <!-- Section 5.2: 7-Day AIM Challenge -->
-  <section id="aim-challenge" class="py-20 bg-[#121214] border-b border-zinc-800/50">
-    <div class="container max-w-4xl text-center space-y-6">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-950/40 border border-amber-800/30 text-amber-500 text-xs font-mono uppercase tracking-widest mx-auto">
-        <i class="fa-solid fa-calendar-check animate-pulse"></i> Weekly Activation
-      </div>
-      
-      <h2 class="text-4xl sm:text-5xl font-black text-white uppercase tracking-tight" style="font-family: var(--font-montserrat);">
-        THE 7-DAY AIM CHALLENGE
-      </h2>
-      
-      <p class="text-zinc-400 text-lg leading-relaxed max-w-2xl mx-auto">
-        Recalibrate your daily operating system. Enter your coordinates below to join the automated email drip sequence delivering one tactical high-agency action task every day for seven days.
-      </p>
-
-      <form id="challenge-signup-form" class="max-w-md mx-auto flex flex-col sm:flex-row gap-3 pt-6">
-        <input type="text" id="challenge-name" placeholder="First Name" class="flex-grow px-5 py-3.5 bg-zinc-950 border border-zinc-800 rounded-xl text-white placeholder-zinc-600 focus:outline-none focus:border-amber-500/50 font-medium text-sm" required>
-        <input type="email" id="challenge-email" placeholder="you@domain.com" class="flex-grow px-5 py-3.5 bg-zinc-950 border border-zinc-800 rounded-xl text-white placeholder-zinc-600 focus:outline-none focus:border-amber-500/50 font-medium text-sm" required>
-        <button type="submit" class="py-3.5 px-6 bg-gradient-to-r from-[#D97706] to-[#B45309] hover:from-[#F59E0B] hover:to-[#D97706] text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-all shadow-md cursor-pointer border-none">
-          Join Drip
-        </button>
-      </form>
-    </div>
-  </section>
-
-  <div class="blueprint-line-h"></div>
-
-  <!-- Section 5.5: The Horizon Core (Youth Horizon Initiative) -->
-  <section id="youth-horizon-core" class="relative bg-[#09090B] py-16 px-6 border-y border-amber-500/10 hidden">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
-      
-      <!-- Left Column (The Blueprint) -->
-      <div class="space-y-8">
-        <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-950/40 border border-amber-800/30 text-amber-500 text-xs font-mono uppercase tracking-widest mb-4">
-            <i class="fa-solid fa-shield-halved text-xs animate-pulse"></i> Gen Z Calibration
-          </div>
-          <h2 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight uppercase" style="font-family: var(--font-montserrat);">
-            THE HORIZON INITIATIVE <br><span class="text-[#D97706]">// EQUIP THE NEXT REVOLUTION.</span>
-          </h2>
-          <p class="text-zinc-400 text-lg leading-relaxed max-w-xl mt-4">
-            The next generation does not need generic career coaching. They require high-intensity psychological calibration and spiritual fortification to build unshakeable authority in a shifting global landscape.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 gap-6">
-          <!-- Node 1 -->
-          <div class="bg-zinc-900 border border-zinc-800/50 p-6 rounded-2xl relative group hover:border-[#D97706]/40 transition-all duration-300">
-            <div class="absolute top-0 left-0 w-1.5 h-full bg-[#D97706]/20 group-hover:bg-[#D97706]/80 transition-colors duration-300 rounded-l-2xl"></div>
-            <div class="pl-2">
-              <span class="text-[10px] font-mono uppercase tracking-widest text-zinc-500 font-bold block mb-1">NODE_01 // SEC_YOUTH</span>
-              <h4 class="text-lg font-bold text-white mb-2">Career Stagnation</h4>
-              <p class="text-sm text-zinc-400 leading-relaxed">
-                Breaking out of low-leverage roles. We recalibrate young builders to execute with high agency, launching them into dominant positions under God's authority.
-              </p>
-            </div>
-          </div>
-
-          <!-- Node 2 -->
-          <div class="bg-zinc-900 border border-zinc-800/50 p-6 rounded-2xl relative group hover:border-[#D97706]/40 transition-all duration-300">
-            <div class="absolute top-0 left-0 w-1.5 h-full bg-[#D97706]/20 group-hover:bg-[#D97706]/80 transition-colors duration-300 rounded-l-2xl"></div>
-            <div class="pl-2">
-              <span class="text-[10px] font-mono uppercase tracking-widest text-zinc-500 font-bold block mb-1">NODE_02 // SEC_YOUTH</span>
-              <h4 class="text-lg font-bold text-white mb-2">Relational Alignment</h4>
-              <p class="text-sm text-zinc-400 leading-relaxed">
-                Purging toxic peer frameworks and cultural drift. We fortify their network structure to surround them with aligned, doctrine-centered peer counsel.
-              </p>
-            </div>
-          </div>
-
-          <!-- Node 3 -->
-          <div class="bg-zinc-900 border border-zinc-800/50 p-6 rounded-2xl relative group hover:border-[#D97706]/40 transition-all duration-300">
-            <div class="absolute top-0 left-0 w-1.5 h-full bg-[#D97706]/20 group-hover:bg-[#D97706]/80 transition-colors duration-300 rounded-l-2xl"></div>
-            <div class="pl-2">
-              <span class="text-[10px] font-mono uppercase tracking-widest text-zinc-500 font-bold block mb-1">NODE_03 // SEC_YOUTH</span>
-              <h4 class="text-lg font-bold text-white mb-2">Legacy Ceilings</h4>
-              <p class="text-sm text-zinc-400 leading-relaxed">
-                Dismantling institutional limitations and fear nodes. Reclaiming territory boldly by locking down identity in Kingdom design.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Transactional Offer Card -->
-        <div class="mt-8 bg-zinc-900/90 border border-amber-500/20 hover:border-amber-500/40 p-6 rounded-2xl relative group transition-all duration-300 shadow-xl shadow-amber-950/5">
-          <div class="absolute top-0 right-0 px-3 py-1 bg-amber-500/10 border-l border-b border-amber-500/20 text-amber-500 text-[9px] font-mono uppercase tracking-widest rounded-bl-lg rounded-tr-2xl">
-            ⚡ SPECIAL ENTRY OFFER
-          </div>
-          <div class="space-y-4">
-            <div>
-              <span class="text-[9px] font-mono uppercase tracking-widest text-[#D97706] font-bold block mb-1">THE INITIAL STEP</span>
-              <h3 class="text-xl font-bold text-white tracking-wide uppercase font-sans">
-                THE SOVEREIGN FLIGHT AUDIO SPRINT
-              </h3>
-            </div>
-            <p class="text-xs text-zinc-400 leading-relaxed font-sans">
-              A high-impact, 4-part audio blueprint engineered for young professionals breaking career stagnation and mastering modern relational alignment under Kingdom authority.
-            </p>
-            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2 border-t border-zinc-800/80">
-              <div class="text-left">
-                <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-wider block">Pricing</span>
-                <span class="text-md font-bold text-white font-mono">$27 One-Time Access</span>
-              </div>
-              <a href="https://velocityos.ai/dr-ben/platform/checkout" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-[#D97706] to-[#B45309] hover:from-[#F59E0B] hover:to-[#D97706] text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all duration-300 transform hover:-translate-y-0.5 animate-none">
-                [ ⚡ Secure My Digital Blueprint ]
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Subscription Offer Card -->
-        <div class="mt-6 bg-zinc-900/90 border border-amber-500/20 hover:border-amber-500/40 p-6 rounded-2xl relative group transition-all duration-300 shadow-xl shadow-amber-950/5">
-          <div class="absolute top-0 right-0 px-3 py-1 bg-amber-500/10 border-l border-b border-amber-500/20 text-amber-500 text-[9px] font-mono uppercase tracking-widest rounded-bl-lg rounded-tr-2xl">
-            ⚡ RECURRING MEMBERSHIP
-          </div>
-          <div class="space-y-4">
-            <div>
-              <span class="text-[9px] font-mono uppercase tracking-widest text-[#D97706] font-bold block mb-1">THE SUBSCRIPTION MATRIX</span>
-              <h3 class="text-xl font-bold text-white tracking-wide uppercase font-sans">
-                THE LAUNCHPAD NETWORK
-              </h3>
-            </div>
-            
-            <p class="text-xs text-zinc-400 leading-relaxed font-sans">
-              Accelerate your leadership with continuous activation. Join a cohort of high-agency professionals dedicated to legacy builders.
-            </p>
-
-            <ul class="space-y-2 pt-1 text-xs text-zinc-400 font-sans" style="list-style: none;">
-              <li class="flex items-start gap-2">
-                <span class="text-amber-500 font-bold">•</span>
-                <span>Bi-weekly Live Digital Strategy Rooms overseen by Dr. Ben.</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-amber-500 font-bold">•</span>
-                <span>Direct peer-to-peer enterprise networking vaults engineered for the 18–35 cohort.</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-amber-500 font-bold">•</span>
-                <span>Continuous tracking access to exclusive tactical audio updates and legacy blueprints.</span>
-              </li>
-            </ul>
-
-            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-zinc-800/80">
-              <div class="text-left">
-                <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-wider block">Membership</span>
-                <span class="text-md font-bold text-white font-mono">$29 / month</span>
-              </div>
-              <a href="https://velocityos.ai/dr-ben/platform/checkout-subscription" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-black border border-[#f59e0b]/40 text-white font-bold text-xs uppercase tracking-wider transition-all duration-300 transform hover:-translate-y-0.5 hover:bg-[#D97706] hover:text-black hover:border-[#D97706] hover:shadow-[0_0_15px_rgba(217,119,6,0.4)]">
-                [ 🚀 Initialize Monthly Membership ]
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right Column (Smartphone Mockup & Waitlist Form) -->
-      <div class="flex flex-col justify-center items-center gap-8">
-        <!-- Phone Frame mockup -->
-        <div class="relative w-[300px] sm:w-[340px] h-[550px] bg-zinc-950 border-8 border-zinc-800 rounded-[36px] shadow-2xl overflow-hidden flex flex-col justify-between p-6 ring-2 ring-amber-500/10 text-white font-sans">
-          <!-- Coming Soon Overlay -->
-          <div class="absolute inset-0 bg-black/40 backdrop-blur-[2px] rounded-[2rem] flex items-center justify-center z-20 pointer-events-none">
-              <div class="bg-[#121214]/90 border border-amber-500/40 px-5 py-2.5 rounded-xl shadow-2xl shadow-black transform rotate-[-4deg] tracking-widest text-center animate-pulse">
-                  <span class="block text-[8px] font-mono uppercase text-amber-500/80 font-bold tracking-widest mb-0.5">Mobile Pipeline</span>
-                  <span class="block font-serif text-md font-black text-white uppercase tracking-wider">COMING SOON</span>
-              </div>
-          </div>
-          <!-- Smartphone notch -->
-          <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-4 bg-zinc-800 rounded-b-lg z-20"></div>
-
-          <!-- App Top Header -->
-          <div class="flex items-center justify-between border-b border-zinc-800/60 pb-3 pt-1">
-            <div class="flex items-center gap-1.5">
-              <div class="w-6 h-6 rounded bg-amber-500/20 border border-amber-500/30 flex items-center justify-center text-amber-500 text-[10px]">
-                <i class="fa-solid fa-shield-halved"></i>
-              </div>
-              <span class="font-mono text-[9px] uppercase tracking-widest text-zinc-400">THE INNER TEACHER</span>
-            </div>
-            <span class="text-[8px] font-mono uppercase text-amber-500 tracking-wider">DEPLOY_ACTIVE</span>
-          </div>
-
-          <!-- App Body / Tactical Console -->
-          <div class="flex-grow flex flex-col justify-center gap-4 py-4">
-            <div class="bg-zinc-900 border border-zinc-800/50 rounded-xl p-4 text-center space-y-2 relative overflow-hidden">
-              <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest block">Diagnostics Stream</span>
-              <div class="text-sm font-bold text-white">CALIBRATION CADENCE</div>
-              <div class="text-[9px] text-emerald-400 font-mono font-semibold">[ ACTIVE CONNECTION ]</div>
-            </div>
-
-            <div class="text-[9px] font-mono text-zinc-400 uppercase tracking-wider pl-1">Modules:</div>
-            
-            <div class="grid grid-cols-2 gap-2.5">
-              <div class="bg-zinc-900 border border-zinc-800/50 rounded-xl p-3 flex flex-col justify-between h-[75px]">
-                <i class="fa-solid fa-radiation text-amber-500 text-xs"></i>
-                <span class="text-[9px] font-bold text-white block">Intimidation Attack</span>
-              </div>
-              <div class="bg-zinc-900 border border-zinc-800/50 rounded-xl p-3 flex flex-col justify-between h-[75px]">
-                <i class="fa-solid fa-lock text-amber-500 text-xs"></i>
-                <span class="text-[9px] font-bold text-white block">Decision Lock</span>
-              </div>
-              <div class="bg-zinc-900 border border-zinc-800/50 rounded-xl p-3 flex flex-col justify-between h-[75px]">
-                <i class="fa-solid fa-wind text-amber-500 text-xs"></i>
-                <span class="text-[9px] font-bold text-white block">Focus Fog</span>
-              </div>
-              <div class="bg-zinc-900 border border-zinc-800/50 rounded-xl p-3 flex flex-col justify-between h-[75px]">
-                <i class="fa-solid fa-people-arrows text-amber-500 text-xs"></i>
-                <span class="text-[9px] font-bold text-white block">Crowd Friction</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- App Bottom Metadata -->
-          <div class="border-t border-zinc-800/60 pt-3 flex justify-between items-center text-[8px] font-mono text-zinc-500 uppercase tracking-widest">
-            <span>SECURE CHANNEL</span>
-            <span>SYSTEM_V2.1</span>
-          </div>
-        </div>
-
-        <!-- Waitlist Conversion Card -->
-        <div class="w-full max-w-[340px] bg-[#121214] border border-zinc-800 p-6 shadow-xl">
-          <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-2" style="font-family: var(--font-montserrat);">Join the Beta Waitlist</h4>
-          <p class="text-zinc-400 text-xs leading-relaxed mb-4">
-            Secure priority access to the standalone voice-activated app and instantly download the free <strong>Inner Teacher Digital Journal Page (PDF)</strong>.
-          </p>
-          <form id="app-waitlist-form" class="space-y-3">
-            <input type="email" id="waitlist-email" placeholder="Email Address" class="w-full px-4 py-2.5 bg-zinc-950 border border-zinc-800 rounded-xl text-xs text-white placeholder-zinc-600 focus:outline-none focus:border-amber-500/50 font-medium" required>
-            <input type="tel" id="waitlist-phone" placeholder="SMS / Phone Number" class="w-full px-4 py-2.5 bg-zinc-950 border border-zinc-800 rounded-xl text-xs text-white placeholder-zinc-600 focus:outline-none focus:border-amber-500/50 font-medium" required>
-            <button type="submit" class="w-full py-3 bg-[#D97706] hover:bg-[#B45309] text-white font-bold text-xs uppercase tracking-widest shadow-md transition-all duration-300 rounded-xl cursor-pointer border-none">
-              [ 🚀 Secure Waitlist & Download ]
-            </button>
-          </form>
-        </div>
-      </div>
-
     </div>
   </section>
 
@@ -1347,103 +748,6 @@
 
   <!-- Section 6: Ecosystem Storefront -->
   <section class="offerings-section section-gap" id="offerings">
-    <!-- Workbook Checkout Modal Overlay -->
-    <div id="checkout-modal-overlay" class="checkout-modal-overlay">
-      <div class="bg-[#09090B] w-full max-w-lg rounded-none border border-amber-500/20 p-8 relative shadow-2xl text-white font-sans mx-4">
-        <!-- Close Button -->
-        <button id="checkout-close-btn" class="absolute top-6 right-6 text-zinc-400 hover:text-white transition-colors bg-transparent border-none cursor-pointer outline-none">
-          <i class="fa-solid fa-xmark text-xl"></i>
-        </button>
-
-        <div class="flex items-center gap-3 mb-6 pb-4 border-b border-zinc-800/80">
-          <div class="w-10 h-10 rounded-xl bg-amber-600/20 border border-amber-500/30 flex items-center justify-center text-amber-500">
-            <i class="fa-solid fa-cart-shopping text-xl"></i>
-          </div>
-          <div>
-            <div class="font-serif text-xl font-bold tracking-wide text-white">SECURE CHECKOUT</div>
-            <div id="checkout-product-subtitle" class="text-[10px] font-mono uppercase tracking-widest text-zinc-400">The Slay Your Giant Workbook</div>
-          </div>
-        </div>
-
-        <form id="checkout-form" class="space-y-4">
-          <!-- Product info summary -->
-          <div class="bg-zinc-950 p-4 border border-zinc-900 flex justify-between items-center rounded-none mb-4">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-12 bg-zinc-900 border border-zinc-800 flex items-center justify-center text-center overflow-hidden rounded">
-                <img id="checkout-product-image" src="/workbook-cover.png" alt="Workbook Cover" class="w-full h-full object-cover">
-              </div>
-              <div>
-                <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-wider block">Product</span>
-                <span id="checkout-product-title" class="text-xs font-bold text-white uppercase font-sans">Slay Your Giant Workbook</span>
-              </div>
-            </div>
-            <div class="text-right">
-              <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-wider block">Price</span>
-              <span id="checkout-product-price" class="text-md font-bold text-amber-500 font-mono">$45.00</span>
-            </div>
-          </div>
-
-          <div class="space-y-3">
-            <h4 class="text-xs font-mono uppercase tracking-wider text-amber-500 font-bold mb-2">// SHIPPING DETAILS</h4>
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <label class="block text-[9px] font-mono uppercase text-zinc-500 mb-1">Full Name</label>
-                <input type="text" id="checkout-shipping-name" class="w-full bg-zinc-900 border border-zinc-800 px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-500/50" required>
-              </div>
-              <div>
-                <label class="block text-[9px] font-mono uppercase text-zinc-500 mb-1">Email Address</label>
-                <input type="email" id="checkout-shipping-email" class="w-full bg-zinc-900 border border-zinc-800 px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-500/50" required>
-              </div>
-            </div>
-            <div>
-              <label class="block text-[9px] font-mono uppercase text-zinc-500 mb-1">Street Address</label>
-              <input type="text" id="checkout-shipping-address" class="w-full bg-zinc-900 border border-zinc-800 px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-500/50" required>
-            </div>
-            <div class="grid grid-cols-3 gap-3">
-              <div>
-                <label class="block text-[9px] font-mono uppercase text-zinc-500 mb-1">City</label>
-                <input type="text" id="checkout-shipping-city" class="w-full bg-zinc-900 border border-zinc-800 px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-500/50" required>
-              </div>
-              <div>
-                <label class="block text-[9px] font-mono uppercase text-zinc-500 mb-1">State</label>
-                <input type="text" id="checkout-shipping-state" class="w-full bg-zinc-900 border border-zinc-800 px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-500/50" required>
-              </div>
-              <div>
-                <label class="block text-[9px] font-mono uppercase text-zinc-500 mb-1">ZIP Code</label>
-                <input type="text" id="checkout-shipping-zip" class="w-full bg-zinc-900 border border-zinc-800 px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-500/50" required>
-              </div>
-            </div>
-          </div>
-
-          <div class="space-y-3 pt-2">
-            <h4 class="text-xs font-mono uppercase tracking-wider text-amber-500 font-bold mb-2">// PAYMENT (STRIPE SIMULATION)</h4>
-            <div>
-              <label class="block text-[9px] font-mono uppercase text-zinc-500 mb-1">Card Number</label>
-              <div class="relative">
-                <input type="text" id="checkout-card-num" placeholder="4242 4242 4242 4242" class="w-full bg-zinc-900 border border-zinc-800 pl-10 pr-4 py-2 text-xs text-white focus:outline-none focus:border-amber-500/50" required>
-                <i class="fa-solid fa-credit-card absolute left-3.5 top-1/2 -translate-y-1/2 text-zinc-500 text-xs"></i>
-              </div>
-            </div>
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <label class="block text-[9px] font-mono uppercase text-zinc-500 mb-1">Expiry Date</label>
-                <input type="text" id="checkout-card-exp" placeholder="MM/YY" class="w-full bg-zinc-900 border border-zinc-800 px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-500/50" required>
-              </div>
-              <div>
-                <label class="block text-[9px] font-mono uppercase text-zinc-500 mb-1">CVC / CVV</label>
-                <input type="text" id="checkout-card-cvc" placeholder="123" class="w-full bg-zinc-900 border border-zinc-800 px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-500/50" required>
-              </div>
-            </div>
-          </div>
-
-          <!-- Submit Button / Loader -->
-          <button type="submit" id="checkout-submit-btn" class="w-full py-3.5 rounded-none bg-gradient-to-r from-[#D97706] to-[#B45309] hover:from-[#F59E0B] hover:to-[#D97706] text-white font-bold text-xs uppercase tracking-widest shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 mt-4 cursor-pointer border-none flex items-center justify-center gap-2">
-            <span>Authorize Payment — $45.00</span>
-          </button>
-        </form>
-      </div>
-    </div>
-
     <div class="container">
       <div class="section-header-blueprint">
         <div>
@@ -1460,7 +764,6 @@
             <span class="offer-level label-caps">01 // INTENSIVE LAUNCH</span>
             <div class="w-40 h-52 bg-zinc-900 border border-zinc-800/80 overflow-hidden mx-auto mb-6 shadow-md shadow-amber-950/10 relative">
               <img src="/workbook-cover.png" alt="7-Day Calibration" class="w-full h-full object-cover grayscale brightness-90 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-105 transition-all duration-500">
-              <div class="absolute inset-0 bg-[#D97706]/10 mix-blend-color group-hover:opacity-0 transition-opacity duration-500"></div>
             </div>
             <h3 class="offer-title text-xl font-bold text-white uppercase tracking-wider mb-2 font-sans text-center">7-Day Dr. Ben Calibration</h3>
             <p class="text-zinc-400 text-xs leading-relaxed font-sans mb-6 text-center">
@@ -1487,7 +790,6 @@
             <span class="offer-level label-caps" style="color: var(--brushed-gold);">02 // SOVEREIGN COHORT</span>
             <div class="w-40 h-52 bg-zinc-900 border border-[#D97706]/40 overflow-hidden mx-auto mb-6 shadow-md shadow-amber-950/10 relative">
               <img src="/dr_ben_headshot.png" alt="Dr. Ben Johnson III" class="w-full h-full object-cover grayscale brightness-90 group-hover:scale-105 transition-all duration-500 group-hover:grayscale-0 group-hover:brightness-100">
-              <div class="absolute inset-0 bg-[#D97706]/20 mix-blend-color group-hover:opacity-0 transition-opacity duration-500"></div>
             </div>
             <h3 class="offer-title text-xl font-bold text-white uppercase tracking-wider mb-2 font-sans text-center">The Sovereign Cohort</h3>
             <p class="text-zinc-400 text-xs leading-relaxed font-sans mb-6 text-center">
@@ -1508,15 +810,11 @@
         </div>
 
         <!-- Tier 3: 6-Month Executive Mentorship -->
-        <!-- Tier 3: 6-Month Executive Mentorship -->
         <div class="offer-card group">
           <div>
             <span class="offer-level label-caps">03 // DIRECT PROXIMITY</span>
-            
-            <!-- HIGH-IMPACT EXECUTIVE GRAPHIC (Replaces Microphone Icon) -->
             <div class="w-40 h-52 bg-zinc-900 border border-zinc-800/80 overflow-hidden mx-auto mb-6 shadow-md shadow-amber-950/10 relative">
               <img src="/dr_ben_headshot.png" alt="Dr. Ben Executive Advisory" class="w-full h-full object-cover grayscale brightness-90 group-hover:scale-105 transition-all duration-500 group-hover:grayscale-0 group-hover:brightness-100">
-              <div class="absolute inset-0 bg-[#D97706]/10 mix-blend-color group-hover:opacity-0 transition-opacity duration-500"></div>
             </div>
 
             <h3 class="offer-title text-xl font-bold text-white uppercase tracking-wider mb-2 font-sans text-center">6-Month Mentorship</h3>
@@ -1542,189 +840,20 @@
 
   <div class="blueprint-line-h"></div>
 
-  <!-- Section 7: The Anchor Weekly Briefing Footer -->
+  <!-- Section 7: Footer -->
   <footer id="the-anchor" class="relative bg-[#09090B] pt-24 pb-12 px-6 border-t border-zinc-800/80">
-      <div class="max-w-6xl mx-auto">
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-zinc-800/60 items-center">
-              
-              <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                  <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-950/40 border border-amber-800/30 text-amber-500 text-xs font-mono uppercase tracking-widest">
-                      <i class="fa-solid fa-anchor text-xs animate-bounce"></i> Weekly Briefing
-                  </div>
-                  <h2 class="text-4xl sm:text-5xl font-black text-white tracking-tight uppercase">
-                      Drop <span class="text-[#D97706]">Anchor.</span>
-                  </h2>
-                  <h3 class="text-xl font-bold text-zinc-200 tracking-tight">
-                      Secure Your Mindset Against The Storm.
-                  </h3>
-                  <p class="text-zinc-400 text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
-                      The world throws constant chaos, doubt, and intimidation at your calling. You cannot afford to let your spirit drift between Sundays. Join thousands of kingdom-driven leaders who receive <span class="text-white font-semibold">The Anchor</span> every single week—Dr. Ben’s private tactical briefing designed to fortify your alignment, sharpen your intention, and lock in absolute triumph.
-                  </p>
-              </div>
-
-              <div class="lg:col-span-5 w-full max-w-md mx-auto" id="anchor-form-card">
-                  <div class="bg-[#121214] p-8 rounded-3xl border border-zinc-800/80 shadow-2xl shadow-black/80">
-                      <form class="space-y-4" id="anchor-intake-form">
-                          <div>
-                              <label class="block text-xs font-mono uppercase tracking-wider text-zinc-500 mb-2">First Name</label>
-                              <input type="text" id="anchor-name-input" placeholder="Enter your name" class="w-full px-5 py-3.5 bg-[#18181B] border border-zinc-800 rounded-xl text-white placeholder-zinc-600 focus:outline-none focus:border-amber-600 font-medium transition-colors" required>
-                          </div>
-                          <div>
-                              <label class="block text-xs font-mono uppercase tracking-wider text-zinc-500 mb-2">Kingdom Email Address</label>
-                              <input type="email" id="visitor-email" placeholder="you@domain.com" class="w-full px-5 py-3.5 bg-[#18181B] border border-zinc-800 rounded-xl text-white placeholder-zinc-600 focus:outline-none focus:border-amber-600 font-medium transition-colors" required>
-                          </div>
-                          <div class="pt-2">
-                              <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-[#D97706] to-[#B45309] hover:from-[#F59E0B] hover:to-[#D97706] text-white font-bold text-lg shadow-lg shadow-amber-950/40 transition-all duration-300 transform hover:-translate-y-0.5">
-                                  Secure My Access
-                              </button>
-                          </div>
-                          <p class="text-[11px] text-zinc-600 text-center font-mono mt-3">
-                              <i class="fa-solid fa-shield-halved"></i> Zero Spam. Completely Secure Kingdom Infrastructure.
-                          </p>
-                      </form>
-                  </div>
-                  
-                  <!-- Duplicate Cluster of Interactive Glassmorphic Social Media Buttons -->
-                  <div class="flex items-center justify-center gap-4 mt-8 pt-6 border-t border-zinc-800/40 w-full">
-                      <button onclick="event.preventDefault();" class="w-11 h-11 rounded-xl flex items-center justify-center relative transition-all duration-300 bg-white/[0.03] backdrop-blur-md border border-white/[0.08] shadow-lg text-zinc-400 hover:text-amber-500 hover:bg-white/[0.07] hover:border-amber-500/30 hover:-translate-y-0.5 active:scale-125 active:text-white active:border-violet-500/60 active:shadow-[0_0_25px_rgba(139,92,246,0.5)]">
-                          <i class="fab fa-youtube text-base"></i>
-                      </button>
-                      <button onclick="event.preventDefault();" class="w-11 h-11 rounded-xl flex items-center justify-center relative transition-all duration-300 bg-white/[0.03] backdrop-blur-md border border-white/[0.08] shadow-lg text-zinc-400 hover:text-amber-500 hover:bg-white/[0.07] hover:border-amber-500/30 hover:-translate-y-0.5 active:scale-125 active:text-white active:border-violet-500/60 active:shadow-[0_0_25px_rgba(139,92,246,0.5)]">
-                          <i class="fab fa-instagram text-base"></i>
-                      </button>
-                      <button onclick="event.preventDefault();" class="w-11 h-11 rounded-xl flex items-center justify-center relative transition-all duration-300 bg-white/[0.03] backdrop-blur-md border border-white/[0.08] shadow-lg text-zinc-400 hover:text-amber-500 hover:bg-white/[0.07] hover:border-amber-500/30 hover:-translate-y-0.5 active:scale-125 active:text-white active:border-violet-500/60 active:shadow-[0_0_25px_rgba(139,92,246,0.5)]">
-                          <i class="fab fa-tiktok text-base"></i>
-                      </button>
-                      <button onclick="event.preventDefault();" class="w-11 h-11 rounded-xl flex items-center justify-center relative transition-all duration-300 bg-white/[0.03] backdrop-blur-md border border-white/[0.08] shadow-lg text-zinc-400 hover:text-amber-500 hover:bg-white/[0.07] hover:border-amber-500/30 hover:-translate-y-0.5 active:scale-125 active:text-white active:border-violet-500/60 active:shadow-[0_0_25px_rgba(139,92,246,0.5)]">
-                          <i class="fab fa-linkedin-in text-base"></i>
-                      </button>
-                      <button onclick="event.preventDefault();" class="w-11 h-11 rounded-xl flex items-center justify-center relative transition-all duration-300 bg-white/[0.03] backdrop-blur-md border border-white/[0.08] shadow-lg text-zinc-400 hover:text-amber-500 hover:bg-white/[0.07] hover:border-amber-500/30 hover:-translate-y-0.5 active:scale-125 active:text-white active:border-violet-500/60 active:shadow-[0_0_25px_rgba(139,92,246,0.5)]">
-                          <i class="fab fa-facebook-f text-base"></i>
-                      </button>
-                  </div>
-              </div>
-
-          </div>
-
-          <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-center sm:text-left gap-4">
-              <p class="text-sm text-zinc-600 font-mono">
-                  &copy; 2026 Dr. Ben C. Johnson III. All Rights Reserved.
-              </p>
-              <p class="text-xs text-zinc-500 font-mono flex items-center gap-1.5">
-                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> 
-                  Infrastructure engineered by <span class="text-zinc-400 font-semibold tracking-wider">AI EMPIRE STUDIO</span>
-              </p>
-          </div>
-      </div>
-  </footer>
-
-  <!-- Success Modal Overlay (Parchment mockup) -->
-  <div class="success-modal hidden" id="anchor-success-overlay">
-    <div class="success-modal-content max-w-3xl p-0 overflow-hidden text-left bg-transparent border-none relative">
-      <div class="absolute right-4 top-4 text-zinc-400 z-50 cursor-pointer text-2xl hover:text-[#D97706] transition-colors" id="close-preview-btn">✕</div>
-      
-      <div class="w-full bg-[#FDFBF7] text-zinc-900 border border-zinc-200 rounded-2xl shadow-2xl p-0 overflow-hidden font-sans">
-          
-          <div class="bg-[#09090B] text-white px-6 py-5 border-b border-zinc-800 flex items-center gap-4">
-              <div class="w-10 h-10 rounded-xl bg-amber-600/20 border border-amber-500/30 flex items-center justify-center text-amber-500">
-                  <i class="fa-solid fa-anchor text-xl"></i>
-              </div>
-              <div>
-                  <div class="font-serif text-2xl font-black tracking-wide text-white">THE ANCHOR</div>
-                  <div class="text-[11px] font-mono uppercase tracking-widest text-zinc-400">INITIAL ISSUE: 001.0</div>
-              </div>
-          </div>
-
-          <div class="bg-zinc-100 px-6 py-2.5 border-b border-zinc-200 text-xs font-mono text-zinc-500 flex flex-wrap gap-x-6 gap-y-1">
-              <div><span class="text-zinc-400">From:</span> Dr. Ben C. Johnson III</div>
-              <div><span class="text-zinc-400">Date:</span> June 15, 2026</div>
-              <div><span class="text-zinc-400">To:</span> <span id="dynamic-subscriber-name" class="text-amber-700 font-semibold">Kingdom Builder</span></div>
-          </div>
-
-          <div class="p-6 sm:p-8 max-h-[500px] overflow-y-auto space-y-6 text-zinc-800 leading-relaxed text-base">
-              
-              <div>
-                  <h4 class="text-xs font-mono uppercase tracking-widest text-amber-600 font-bold mb-1">Welcome to the Perimeter</h4>
-                  <h3 class="text-2xl font-black text-zinc-950 tracking-tight">Kingdom Builder,</h3>
-              </div>
-
-              <p>
-                  You are positioned at a critical tipping point. You weren't anointed for quiet survival in the wilderness; you were called for strategic dominion over the territory God assigned to you. The enemy doesn't just fight you with open chaos—he fights you with quiet drift, heavy fog, and unseen ceilings in your execution. 
-              </p>
-              
-              <p>
-                  Recognize where your spirit is being tested today: <strong>Are you moving with deliberate Intention, or are you just busy building someone else's kingdom?</strong> It is time to break off the spiritual friction and stand firm.
-              </p>
-
-              <div class="bg-amber-50 border-l-4 border-[#D97706] p-5 my-6 rounded-r-xl">
-                  <h4 class="text-sm font-mono uppercase tracking-wider text-amber-800 font-bold mb-2">THIS WEEK'S FOCUS // THE AIM PRINCIPLES</h4>
-                  <p class="text-sm text-amber-950">
-                      <strong>Alignment</strong> is your baseline weapon. When you position your mind, your household, and your commercial systems completely under divine authority, the giants in front of you lose their legal right to intimidate you. Alignment turns your confusion into a direct blueprint.
-                  </p>
-              </div>
-
-              <hr class="border-zinc-200">
-
-              <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center pt-2">
-                  <div class="md:col-span-4 flex justify-center">
-                      <div class="w-36 h-52 bg-zinc-900 rounded shadow-md border border-zinc-800 flex items-center justify-center text-center p-4">
-                          <img src="/book-cover.png" alt="How to Slay Your Giant Cover Preview" class="w-full h-full object-cover">
-                      </div>
-                  </div>
-                  <div class="md:col-span-8 space-y-3">
-                      <div class="text-xs font-mono uppercase tracking-widest text-zinc-400 font-semibold">Required Manual</div>
-                      <h4 class="text-xl font-bold text-zinc-950">Gear Up for the Valley</h4>
-                      <p class="text-sm text-zinc-600">Facing a wall you can't break through? Get the direct, digital field manual containing the absolute tactical steps to conquer fear and reclaim your territory.</p>
-                      <a href="https://velocityos.ai/dr-ben/platform/checkout" class="inline-flex items-center gap-2 px-5 py-2.5 bg-[#D97706] hover:bg-[#B45309] text-white text-sm font-bold rounded-lg shadow transition-colors">
-                          <i class="fa-solid fa-cart-shopping"></i> Claim Your Copy — $10.00
-                      </a>
-                  </div>
-              </div>
-
-              <hr class="border-zinc-200">
-
-              <!-- Connect & Fortify Social Matrix Inside Mockup -->
-              <div class="space-y-4 pt-4 border-t border-zinc-200">
-                  <h4 class="text-xs font-mono uppercase tracking-widest text-[#D97706] font-bold text-center">Connect & Fortify</h4>
-                  <div class="bg-[#09090B] p-6 rounded-2xl border border-zinc-800/80 flex items-center justify-center gap-4 max-w-sm mx-auto shadow-lg">
-                      <button onclick="event.preventDefault();" class="w-11 h-11 rounded-xl flex items-center justify-center relative transition-all duration-300 bg-white/[0.03] backdrop-blur-md border border-white/[0.08] shadow-lg text-zinc-400 hover:text-amber-500 hover:bg-white/[0.07] hover:border-amber-500/30 hover:-translate-y-0.5 active:scale-125 active:text-white active:border-violet-500/60 active:shadow-[0_0_25px_rgba(139,92,246,0.5)]">
-                          <i class="fab fa-youtube text-base"></i>
-                      </button>
-                      <button onclick="event.preventDefault();" class="w-11 h-11 rounded-xl flex items-center justify-center relative transition-all duration-300 bg-white/[0.03] backdrop-blur-md border border-white/[0.08] shadow-lg text-zinc-400 hover:text-amber-500 hover:bg-white/[0.07] hover:border-amber-500/30 hover:-translate-y-0.5 active:scale-125 active:text-white active:border-violet-500/60 active:shadow-[0_0_25px_rgba(139,92,246,0.5)]">
-                          <i class="fab fa-instagram text-base"></i>
-                      </button>
-                      <button onclick="event.preventDefault();" class="w-11 h-11 rounded-xl flex items-center justify-center relative transition-all duration-300 bg-white/[0.03] backdrop-blur-md border border-white/[0.08] shadow-lg text-zinc-400 hover:text-amber-500 hover:bg-white/[0.07] hover:border-amber-500/30 hover:-translate-y-0.5 active:scale-125 active:text-white active:border-violet-500/60 active:shadow-[0_0_25px_rgba(139,92,246,0.5)]">
-                          <i class="fab fa-tiktok text-base"></i>
-                      </button>
-                      <button onclick="event.preventDefault();" class="w-11 h-11 rounded-xl flex items-center justify-center relative transition-all duration-300 bg-white/[0.03] backdrop-blur-md border border-white/[0.08] shadow-lg text-zinc-400 hover:text-amber-500 hover:bg-white/[0.07] hover:border-amber-500/30 hover:-translate-y-0.5 active:scale-125 active:text-white active:border-violet-500/60 active:shadow-[0_0_25px_rgba(139,92,246,0.5)]">
-                          <i class="fab fa-linkedin-in text-base"></i>
-                      </button>
-                      <button onclick="event.preventDefault();" class="w-11 h-11 rounded-xl flex items-center justify-center relative transition-all duration-300 bg-white/[0.03] backdrop-blur-md border border-white/[0.08] shadow-lg text-zinc-400 hover:text-amber-500 hover:bg-white/[0.07] hover:border-amber-500/30 hover:-translate-y-0.5 active:scale-125 active:text-white active:border-violet-500/60 active:shadow-[0_0_25px_rgba(139,92,246,0.5)]">
-                          <i class="fab fa-facebook-f text-base"></i>
-                      </button>
-                  </div>
-              </div>
-
-              <hr class="border-zinc-200">
-
-              <div class="space-y-4 pt-2">
-                  <div class="text-center">
-                      <h4 class="text-xs font-mono uppercase tracking-widest text-zinc-400 font-semibold mb-1">Sovereign Benediction</h4>
-                      <p class="text-sm text-zinc-500 italic">"Now to Him who is able to do immeasurably more than all we ask or imagine, according to His power that is at work within us." — Ephesians 3:20</p>
-                  </div>
-              </div>
-              
-              <!-- Smooth Scroll Vault CTA Button -->
-              <div class="pt-6 flex justify-center border-t border-zinc-200 mt-6 w-full">
-                  <a href="#portal" id="vault-cta-btn" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-[#D97706] to-[#B45309] hover:from-[#F59E0B] hover:to-[#D97706] text-white font-bold text-base shadow-md transition-all duration-300 transform hover:-translate-y-0.5 uppercase tracking-wider text-center" style="text-decoration: none;">
-                      [ 🏛️ Enter Kingdom Intel Vault ]
-                  </a>
-              </div>
-
-          </div>
+    <div class="max-w-6xl mx-auto">
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-center sm:text-left gap-4">
+        <p class="text-sm text-zinc-600 font-mono">
+          &copy; 2026 Dr. Ben C. Johnson III. All Rights Reserved.
+        </p>
+        <p class="text-xs text-zinc-500 font-mono flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> 
+          Infrastructure engineered by <span class="text-zinc-400 font-semibold tracking-wider">AI EMPIRE STUDIO</span>
+        </p>
       </div>
     </div>
-  </div>
+  </footer>
 
   <script src="/voice-agent.js"></script>
 </body>
