@@ -1,0 +1,4 @@
+*.mov
+*.MOV
+.env
+node_modules/
