@@ -8,48 +8,20 @@
     {
       "src": "public/**/*",
       "use": "@vercel/static"
-    },
-    {
-      "src": "index.html",
-      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/api/chat",
+      "src": "/api/(.*)",
       "dest": "server.js"
     },
     {
-      "src": "/api/voice",
-      "dest": "server.js"
-    },
-    {
-      "src": "/css/styles.css",
-      "dest": "public/css/styles.css"
-    },
-    {
-      "src": "/voice-agent.js",
-      "dest": "public/voice-agent.js"
-    },
-    {
-      "src": "/dr_ben_headshot.png",
-      "dest": "public/dr_ben_headshot.png"
-    },
-    {
-      "src": "/book-cover.png",
-      "dest": "public/book-cover.png"
-    },
-    {
-      "src": "/workbook-cover.png",
-      "dest": "public/workbook-cover.png"
-    },
-    {
-      "src": "/screen.png",
-      "dest": "public/screen.png"
+      "src": "/videos/(.*)",
+      "dest": "/public/videos/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "index.html"
+      "dest": "/public/$1"
     }
   ]
 }

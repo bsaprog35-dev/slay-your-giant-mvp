@@ -152,7 +152,7 @@ app.post('/api/voice', async (req, res) => {
 
 // Fallback to index.html for single-page routing
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // Start Express Server
