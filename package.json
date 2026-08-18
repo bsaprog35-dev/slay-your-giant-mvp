@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Secure proxy server and interactive landing page for SlayGiant.com",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js"

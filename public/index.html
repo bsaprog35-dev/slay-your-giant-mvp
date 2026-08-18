@@ -634,12 +634,17 @@
       <!-- Video Briefing 3 -->
       <div class="bg-zinc-950 border border-zinc-800/80 p-5 flex flex-col justify-between rounded-2xl relative overflow-hidden group hover:border-amber-500/40 transition-all duration-300 shadow-xl min-h-[520px]">
         
-        <!-- Expanded Image/Audio Frame Wrapper -->
-        <div class="w-full h-64 bg-zinc-900 border border-zinc-800 relative overflow-hidden flex items-center justify-center rounded-xl">
-          <img src="/dr_ben_headshot.png" alt="Isolation poster" class="w-full h-full object-cover grayscale brightness-50 group-hover:scale-105 transition-transform duration-500">
-          <div class="absolute w-12 h-12 rounded-full bg-black/80 border border-amber-500/40 flex items-center justify-center text-amber-500 group-hover:bg-amber-500 group-hover:text-black transition-colors cursor-pointer">
-            <i class="fa-solid fa-play text-xs ml-0.5"></i>
-          </div>
+        <!-- Expanded Video Frame Wrapper -->
+        <div class="w-full h-64 bg-black border border-zinc-800 relative overflow-hidden rounded-xl shadow-inner flex items-center justify-center">
+          <video 
+            controls 
+            playsinline 
+            preload="metadata" 
+            poster="/dr_ben_headshot.png"
+            class="w-full h-full object-contain bg-black">
+            <source src="/videos/solitary-builder.mp4" type="video/mp4">
+            Your browser does not support HTML video.
+          </video>
         </div>
 
         <div class="my-4 space-y-2">
