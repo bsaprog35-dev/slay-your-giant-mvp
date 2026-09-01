@@ -986,6 +986,22 @@
     </div>
   </footer>
 
-  <script src="/voice-agent.js"></script>
+ <script src="/voice-agent.js"></script>
+  <script>
+    const heroVideo = document.getElementById('hero-avatar-video');
+    if (heroVideo) {
+      heroVideo.addEventListener('ended', () => {
+        // 1. Pause and rewind to time 0
+        heroVideo.pause();
+        heroVideo.currentTime = 0;
+        
+        // 2. Reassign src and reload to force the browser to render poster="/dr_ben_headshot.png"
+        const currentSrc = heroVideo.querySelector('source') ? heroVideo.querySelector('source').src : heroVideo.src;
+        heroVideo.src = '';
+        heroVideo.src = currentSrc;
+        heroVideo.load();
+      });
+    }
+  </script>
 </body>
 </html>
