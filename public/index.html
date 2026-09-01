@@ -186,49 +186,41 @@
         </div>
       </div>
       
+      <!-- Hero Right: Real HeyGen AI Video Avatar Player -->
       <div class="hero-right">
-        <div class="simulated-player-container w-full max-w-[440px] aspect-[4/5] bg-zinc-950 border border-zinc-800 rounded-none relative overflow-hidden group shadow-2xl">
-          <img src="/dr_ben_headshot.png" alt="Dr. Ben Johnson III" class="absolute inset-0 w-full h-full object-cover grayscale contrast-110 opacity-70 group-hover:grayscale-0 group-hover:opacity-80 transition-all duration-700">
+        <div class="w-full max-w-[440px] aspect-[4/5] bg-zinc-950 border border-zinc-800 rounded-2xl relative overflow-hidden group shadow-2xl flex flex-col justify-between p-4">
           
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent flex flex-col justify-between p-6">
-            <div class="flex justify-between items-center w-full">
-              <span class="px-3 py-1 bg-amber-500/10 border border-amber-500/30 rounded text-[9px] font-mono text-amber-500 uppercase tracking-widest flex items-center gap-1.5 animate-pulse">
-                <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span> Live Media Briefing
-              </span>
-              <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-wider">01 / SEC_A</span>
-            </div>
-
-            <div class="flex justify-center items-end gap-1 h-12 w-full my-auto opacity-80" id="hero-player-wave">
-              <div class="w-1 bg-amber-500 rounded-full h-2 transition-all duration-300"></div>
-              <div class="w-1 bg-amber-500 rounded-full h-4 transition-all duration-300"></div>
-              <div class="w-1 bg-amber-500 rounded-full h-6 transition-all duration-300"></div>
-              <div class="w-1 bg-amber-500 rounded-full h-3 transition-all duration-300"></div>
-              <div class="w-1 bg-amber-500 rounded-full h-5 transition-all duration-300"></div>
-            </div>
-
-            <div class="w-full bg-black/75 border border-zinc-800/80 px-4 py-3 rounded-lg text-center min-h-[70px] flex items-center justify-center">
-              <p id="hero-player-cc" class="text-xs sm:text-sm text-zinc-200 font-sans tracking-wide leading-relaxed italic">
-                "My name is Dr. Ben Johnson III. I believe most people are not stuck because they lack talent..."
-              </p>
-            </div>
-
-            <div class="w-full flex items-center justify-between mt-4 pt-3 border-t border-zinc-900/60">
-              <button id="hero-player-play-btn" class="w-10 h-10 rounded-full bg-amber-500 hover:bg-amber-600 text-black flex items-center justify-center cursor-pointer border-none outline-none transition-all shadow-lg hover:scale-105 active:scale-95">
-                <i class="fa-solid fa-pause text-sm" id="hero-play-icon"></i>
-              </button>
-              
-              <div class="flex-grow mx-4 relative h-1 bg-zinc-800 rounded-full overflow-hidden cursor-pointer" id="hero-player-timeline">
-                <div id="hero-player-progress" class="absolute left-0 top-0 bottom-0 bg-amber-500 transition-all duration-100" style="width: 0%;"></div>
-              </div>
-
-              <button id="hero-player-mute-btn" class="text-zinc-400 hover:text-white transition-colors bg-transparent border-none cursor-pointer outline-none">
-                <i class="fa-solid fa-volume-xmark text-md" id="hero-mute-icon"></i>
-              </button>
-            </div>
+          <!-- Top Badge Bar -->
+          <div class="flex justify-between items-center w-full z-10 mb-2">
+            <span class="px-3 py-1 bg-amber-500/10 border border-amber-500/30 rounded text-[9px] font-mono text-amber-500 uppercase tracking-widest flex items-center gap-1.5 animate-pulse">
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span> Live AI Avatar Briefing
+            </span>
+            <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-wider">01 / HERO_AVATAR</span>
           </div>
+
+          <!-- Video Player -->
+          <div class="w-full h-full relative rounded-xl overflow-hidden bg-black flex items-center justify-center">
+            <video 
+              id="hero-avatar-video"
+              controls 
+              playsinline 
+              preload="metadata" 
+              poster="/dr_ben_headshot.png"
+              class="w-full h-full object-cover rounded-xl bg-black">
+              <source src="/videos/dr-ben-avatar.mp4" type="video/mp4">
+              Your browser does not support HTML video.
+            </video>
+          </div>
+
+          <!-- Caption Sub-bar -->
+          <div class="mt-3 bg-black/80 border border-zinc-800/80 px-3 py-2 rounded-lg text-center">
+            <p class="text-xs text-zinc-300 font-sans tracking-wide leading-relaxed italic">
+              "If you cannot identify your giant, you will never kill your giant." — Dr. Ben Johnson III
+            </p>
+          </div>
+
         </div>
       </div>
-    </div>
   </section>
 
   <div class="blueprint-line-h"></div>
