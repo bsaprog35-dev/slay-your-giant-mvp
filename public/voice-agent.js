@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <span class="text-[9px] font-mono text-amber-500 uppercase tracking-widest block font-bold">Recommended Weapon</span>
             <h4 class="text-sm font-bold text-white uppercase font-sans">The Slay Your Giant Workbook</h4>
           </div>
-          <span class="text-md font-bold text-amber-500 font-mono font-black">$45.00</span>
+          <span class="text-md font-bold text-amber-500 font-mono font-black">$19.95</span>
         </div>
         <p class="text-xs text-zinc-400 font-sans leading-relaxed">
           Ready to break your active loops? Get the actionable field manual containing the 7-day deconstruction matrices.
@@ -1110,7 +1110,7 @@ document.addEventListener('DOMContentLoaded', () => {
             Dismantle this bottleneck immediately. Start your 7-day deconstruction process with the Workbook.
           </p>
           <button id="quiz-results-purchase-btn" class="w-full max-w-sm py-3.5 bg-gradient-to-r from-[#D97706] to-[#B45309] hover:from-[#F59E0B] hover:to-[#D97706] text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-all shadow-md cursor-pointer border-none font-mono">
-            [ Claim Your Workbook — $45 ]
+            [ Claim Your Workbook — $19.95 ]
           </button>
           
           <button id="quiz-reset-btn" class="block text-[10px] font-mono text-zinc-500 hover:text-white uppercase tracking-wider mx-auto bg-transparent border-none cursor-pointer">
