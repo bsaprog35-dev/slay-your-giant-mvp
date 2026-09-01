@@ -201,15 +201,17 @@
           <!-- Video Player -->
           <div class="w-full h-full relative rounded-xl overflow-hidden bg-black flex items-center justify-center">
             <video 
-              id="hero-avatar-video"
-              controls 
-              playsinline 
-              preload="metadata" 
-              poster="/dr_ben_headshot.png"
-              class="w-full h-full object-cover rounded-xl bg-black">
-              <source src="/videos/dr-ben-avatar.mp4" type="video/mp4">
-              Your browser does not support HTML video.
-            </video>
+  id="hero-avatar-video"
+  controls 
+  playsinline 
+  preload="metadata" 
+  poster="/dr_ben_headshot.png"
+  controlsList="nodownload nofullscreen noremoteplayback"
+  disablePictureInPicture
+  class="w-full h-full object-cover rounded-xl bg-black">
+  <source src="/videos/dr-ben-avatar.mp4" type="video/mp4">
+  Your browser does not support HTML video.
+</video>
           </div>
 
           <!-- Caption Sub-bar -->
