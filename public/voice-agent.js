@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const statusText = document.getElementById('portal-status-text');
   const dialoguePrompt = document.getElementById('portal-dialogue-prompt');
   const canvas = document.getElementById('waveform-canvas');
-  const chatInputForm = document.getElementById('chat-text-form');
-  const chatTextInput = document.getElementById('chat-text-input');
+  const chatInputForm = document.getElementById('portal-chat-form') || document.getElementById('chat-text-form');
+  const chatTextInput = document.getElementById('portal-chat-input') || document.getElementById('chat-text-input');
   
   // Lead Gate Modal
   const leadGateModal = document.getElementById('voice-lead-modal-overlay');
