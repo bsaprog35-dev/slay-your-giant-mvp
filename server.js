@@ -87,7 +87,7 @@ app.post('/api/chat', async (req, res) => {
 
     // Generate content using Gemini 2.0 Flash
     const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
+      model: 'gemini-3.6-flash',
       contents: [
         ...formattedHistory,
         { role: 'user', parts: [{ text: message }] }
