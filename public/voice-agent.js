@@ -44,12 +44,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Audio Playback Elements
   let currentAudio = null;
-  const audioUnlockElement = new Audio();
-  audioUnlockElement.setAttribute('playsinline', '');
-  audioUnlockElement.src = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAgD4AAAB9AAACABAAZGF0YQAAAAA=';
+  let audioContext = null;
+  const persistentAudio = new Audio();
+  persistentAudio.setAttribute('playsinline', '');
+  persistentAudio.preload = 'auto';
+  persistentAudio.src = 'data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA';
 
   function primeAudioPlayback() {
-    audioUnlockElement.play().catch(() => {
+    try {
+      const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+      if (AudioContextClass) {
+        if (!audioContext) audioContext = new AudioContextClass();
+        const silentBuffer = audioContext.createBuffer(1, 1, 22050);
+        const source = audioContext.createBufferSource();
+        source.buffer = silentBuffer;
+        source.connect(audioContext.destination);
+        source.start(0);
+        if (audioContext.state === 'suspended') audioContext.resume().catch(() => {});
+      }
+    } catch (error) {
+      console.warn('[Voice Portal] AudioContext unlock failed:', error);
+    }
+
+    persistentAudio.play().catch(() => {
       // iOS may reject the silent unlock; the real playback path reports its own error.
     });
   }
@@ -302,7 +319,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.voiceAgentState = 'responding';
         if (statusText) statusText.innerText = "DIGITAL TWIN RESPONDING...";
         
-        currentAudio = audioUnlockElement;
+        currentAudio = persistentAudio;
         currentAudio.src = audioURL;
         currentAudio.load();
         currentAudio.play().catch((playbackError) => {
