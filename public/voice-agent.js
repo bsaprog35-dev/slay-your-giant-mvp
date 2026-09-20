@@ -44,6 +44,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Audio Playback Elements
   let currentAudio = null;
+  const audioUnlockElement = new Audio();
+  audioUnlockElement.setAttribute('playsinline', '');
+  audioUnlockElement.src = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAgD4AAAB9AAACABAAZGF0YQAAAAA=';
+
+  function primeAudioPlayback() {
+    audioUnlockElement.play().catch(() => {
+      // iOS may reject the silent unlock; the real playback path reports its own error.
+    });
+  }
 
   // Typewriter context
   let typewriterIntervalId = null;
@@ -293,10 +302,17 @@ document.addEventListener('DOMContentLoaded', () => {
         window.voiceAgentState = 'responding';
         if (statusText) statusText.innerText = "DIGITAL TWIN RESPONDING...";
         
-        currentAudio = new Audio(audioURL);
-        currentAudio.play();
+        currentAudio = audioUnlockElement;
+        currentAudio.src = audioURL;
+        currentAudio.load();
+        currentAudio.play().catch((playbackError) => {
+          console.warn('[Voice Portal] Audio playback was blocked:', playbackError);
+          URL.revokeObjectURL(audioURL);
+          resetToIdle();
+        });
         
         currentAudio.onended = () => {
+          URL.revokeObjectURL(audioURL);
           resetToIdle();
         };
 
@@ -320,6 +336,12 @@ document.addEventListener('DOMContentLoaded', () => {
   function speakWithBrowserSynthesis(responseText) {
     window.voiceAgentState = 'responding';
     if (statusText) statusText.innerText = "DIGITAL TWIN RESPONDING...";
+
+    if (!('speechSynthesis' in window) || !('SpeechSynthesisUtterance' in window)) {
+      if (dialoguePrompt) dialoguePrompt.innerText = 'Audio is unavailable on this device. Please use the text box below.';
+      resetToIdle();
+      return;
+    }
 
     const utterance = new SpeechSynthesisUtterance(responseText.replace(/\[OFFER_WORKBOOK\]/g, '').trim());
     
@@ -357,24 +379,19 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
+      primeAudioPlayback();
       window.voiceAgentState = 'listening';
       triggerVisuals(true);
       if (statusText) statusText.innerText = "LISTENING...";
       if (dialoguePrompt) dialoguePrompt.innerText = "Speak now... I am listening for your friction.";
 
       if (recognition) {
-        recognition.start();
-
         const timeoutId = setTimeout(() => {
           try { recognition.stop(); } catch(err){}
           if (window.voiceAgentState === 'listening') {
-            console.warn("Recognition timed out. Using fallback prompt.");
-            const fallbackPrompt = "I am carrying the weight of my business alone, and I feel stuck.";
-            dialoguePrompt.innerText = `[Mic Timeout]. Processing: "${fallbackPrompt}"`;
-            setTimeout(async () => {
-              const proceed = await checkDialogTurnGate(fallbackPrompt);
-              if (proceed) processChatRequest(fallbackPrompt);
-            }, 1000);
+            console.warn('Speech recognition timed out.');
+            resetToIdle();
+            if (dialoguePrompt) dialoguePrompt.innerText = 'I did not hear anything. Please try again or type your question below.';
           }
         }, 7000);
 
@@ -390,22 +407,22 @@ document.addEventListener('DOMContentLoaded', () => {
           clearTimeout(timeoutId);
           console.warn("Speech recognition error:", event.error);
           if (window.voiceAgentState === 'listening') {
-            const fallbackPrompt = "I feel stuck in my leadership and carry the weight alone.";
-            dialoguePrompt.innerText = `[Mic Error: "${event.error}"]. Simulating: "${fallbackPrompt}"`;
-            setTimeout(async () => {
-              const proceed = await checkDialogTurnGate(fallbackPrompt);
-              if (proceed) processChatRequest(fallbackPrompt);
-            }, 1000);
+            resetToIdle();
+            if (dialoguePrompt) dialoguePrompt.innerText = 'Microphone access is unavailable. Please allow microphone access or type your question below.';
           }
         };
+
+        try {
+          recognition.start();
+        } catch (error) {
+          clearTimeout(timeoutId);
+          console.warn('Speech recognition could not start:', error);
+          resetToIdle();
+          if (dialoguePrompt) dialoguePrompt.innerText = 'Voice input is unavailable on this browser. Please type your question below.';
+        }
       } else {
-        // Mic unsupported
-        const fallbackPrompt = "I feel stuck in my leadership and carry the weight alone.";
-        dialoguePrompt.innerText = `[Speech Recognition Unsupported]. Simulating: "${fallbackPrompt}"`;
-        setTimeout(async () => {
-          const proceed = await checkDialogTurnGate(fallbackPrompt);
-          if (proceed) processChatRequest(fallbackPrompt);
-        }, 1500);
+        resetToIdle();
+        if (dialoguePrompt) dialoguePrompt.innerText = 'Voice input is unavailable on this browser. Please type your question below.';
       }
     });
   }
@@ -421,6 +438,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (chatTextInput) chatTextInput.value = '';
 
+      primeAudioPlayback();
       const proceed = await checkDialogTurnGate(userInput);
       if (proceed) {
         processChatRequest(userInput);
