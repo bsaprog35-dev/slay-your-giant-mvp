@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { GoogleGenAI } from '@google/genai';
+import sevenDaysHandler from './lib/sevenDaysHandler.js';
 
 dotenv.config();
 
@@ -167,6 +168,12 @@ app.post('/api/voice', async (req, res) => {
     console.error('Error in /api/voice:', error);
     res.status(500).json({ error: 'Failed to generate voice response.' });
   }
+});
+
+// "Slay Your Giant in 7 Days" lead-magnet funnel
+app.post('/api/7days', sevenDaysHandler);
+app.get(['/7days', '/7days.html'], (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', '7days.html'));
 });
 
 // Fallback to index.html for single-page routing

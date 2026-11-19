@@ -20,6 +20,10 @@
       "dest": "/public/videos/$1"
     },
     {
+      "src": "/7days",
+      "dest": "/public/7days.html"
+    },
+    {
       "src": "/(.*)",
       "dest": "/public/$1"
     }
