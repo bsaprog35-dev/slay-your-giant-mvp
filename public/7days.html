@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Slay Your Giant in 7 Days — Free Calibration Plan | Dr. Ben C. Johnson III</title>
-  <meta name="description" content="Stop comfort drifting. Give it ten focused minutes a day to name what's in your way, take one decisive step, and record a victory by Sunday. Claim Dr. Ben C. Johnson III's free 7-day plan.">
+  <title>Slay Your Giant in 7 Days | Dr. Ben C. Johnson III</title>
+  <meta name="description" content="What's one thing you've been putting off? Give it ten minutes a day. Name what's in your way, take one step, and record a victory by the end of the week.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
@@ -15,11 +15,12 @@
       --card: #121214;
       --card2: #18181B;
       --line: #27272A;
-      --line-soft: rgba(255, 255, 255, 0.06);
-      --amber: #D97706;
-      --amber-b: #F59E0B;
-      --amber-glow: rgba(217, 119, 6, 0.14);
-      --t1: #FFFFFF;
+      --line-soft: rgba(255, 255, 255, 0.07);
+      --gold: #d4af37;
+      --gold-bright: #eab308;
+      --gold-soft: rgba(234, 179, 8, 0.12);
+      --gold-border: rgba(212, 175, 55, 0.42);
+      --t1: #F8F8F9;
       --t2: #D4D4D8;
       --t3: #A1A1AA;
       --t4: #71717A;
@@ -37,36 +38,35 @@
       min-height: 100vh;
       overflow-x: hidden;
       background:
-        radial-gradient(900px 460px at 80% -10%, rgba(217, 119, 6, 0.10), transparent 65%),
-        radial-gradient(700px 420px at 10% 30%, rgba(217, 119, 6, 0.05), transparent 60%),
+        radial-gradient(900px 460px at 80% -10%, rgba(234, 179, 8, 0.10), transparent 65%),
+        radial-gradient(700px 420px at 10% 30%, rgba(212, 175, 55, 0.06), transparent 60%),
         var(--bg);
     }
     a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; }
 
-    /* Containers & Blueprint Rules */
     .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
-    .wrap-narrow { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+    .wrap-plan { max-width: 820px; margin: 0 auto; padding: 0 20px; }
     .divider { border-top: 1px solid var(--line); }
 
-    /* Sticky Top Navigation */
+    /* Always-Visible Top Navigation Bar */
     .bar {
       position: sticky;
       top: 0;
-      z-index: 50;
+      z-index: 60;
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
-      background: rgba(9, 9, 11, 0.84);
+      background: rgba(9, 9, 11, 0.88);
       border-bottom: 1px solid var(--line-soft);
     }
     .bar-inner {
       max-width: 1120px;
       margin: 0 auto;
-      padding: 16px 20px;
+      padding: 15px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
+      gap: 14px;
     }
     .logo {
       font: 800 15px 'Montserrat', sans-serif;
@@ -75,11 +75,11 @@
       color: var(--t1);
       white-space: nowrap;
     }
-    .logo span { color: var(--amber); }
-    .nav-links {
+    .logo span { color: var(--gold-bright); }
+    .nav-right {
       display: flex;
       align-items: center;
-      gap: 22px;
+      gap: 20px;
     }
     .nav-link {
       font: 500 11px 'Inter', sans-serif;
@@ -89,31 +89,35 @@
       transition: color 0.2s;
       display: none;
     }
-    .nav-link:hover { color: var(--amber-b); }
-    .nav-cta {
+    .nav-link:hover { color: var(--gold-bright); }
+    .back-btn {
       display: inline-flex;
       align-items: center;
-      padding: 10px 18px;
+      gap: 6px;
+      padding: 9px 16px;
       border-radius: 9999px;
-      background: var(--amber);
-      color: #000;
-      font: 700 11px 'Montserrat', sans-serif;
-      letter-spacing: 0.15em;
+      border: 1px solid var(--gold-border);
+      background: rgba(212, 175, 55, 0.08);
+      color: var(--gold-bright);
+      font: 600 11px 'Montserrat', sans-serif;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
       white-space: nowrap;
     }
-    .nav-cta:hover {
+    .back-btn:hover {
+      background: var(--gold-bright);
+      border-color: var(--gold-bright);
+      color: #09090B;
       transform: translateY(-1px);
-      box-shadow: 0 0 18px rgba(217, 119, 6, 0.45);
     }
 
     /* Typography Helpers */
     .eyebrow {
-      font: 500 12px 'JetBrains Mono', monospace;
+      font: 600 12px 'JetBrains Mono', monospace;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--amber-b);
+      color: var(--gold-bright);
       display: inline-block;
     }
     .coord {
@@ -139,7 +143,7 @@
       text-transform: uppercase;
       margin-top: 10px;
     }
-    .sec-title em { font-style: normal; color: var(--amber); }
+    .sec-title em { font-style: normal; color: var(--gold-bright); }
 
     /* Buttons */
     .btn-primary {
@@ -147,37 +151,37 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      padding: 16px 28px;
-      min-height: 52px;
-      background: var(--amber);
-      color: #000;
-      font: 700 12px 'Montserrat', sans-serif;
-      letter-spacing: 0.16em;
+      padding: 15px 26px;
+      min-height: 50px;
+      background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+      color: #09090B;
+      font: 800 12px 'Montserrat', sans-serif;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       border: 0;
       border-radius: 9999px;
       cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
     }
     .btn-primary:hover:not(:disabled) {
       transform: translateY(-2px);
-      background: var(--amber-b);
-      box-shadow: 0 0 22px rgba(217, 119, 6, 0.4);
+      filter: brightness(1.06);
+      box-shadow: 0 0 22px rgba(234, 179, 8, 0.38);
     }
     .btn-primary:disabled { opacity: 0.7; cursor: progress; }
-    .btn-primary:focus-visible { outline: 2px solid var(--amber-b); outline-offset: 3px; }
+    .btn-primary:focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 3px; }
 
     .btn-secondary {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 15px 26px;
-      min-height: 52px;
+      padding: 14px 22px;
+      min-height: 50px;
       background: transparent;
       color: var(--t1);
       font: 700 12px 'Montserrat', sans-serif;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.13em;
       text-transform: uppercase;
       border: 1px solid var(--line);
       border-radius: 9999px;
@@ -185,13 +189,14 @@
       transition: border-color 0.2s, color 0.2s, background 0.2s;
     }
     .btn-secondary:hover {
-      border-color: var(--amber);
-      color: var(--amber-b);
-      background: rgba(217, 119, 6, 0.06);
+      border-color: var(--gold);
+      color: var(--gold-bright);
+      background: rgba(212, 175, 55, 0.08);
     }
+    .btn-secondary:focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 3px; }
 
-    /* Section 1: Hero */
-    .hero { padding: 64px 0 72px; }
+    /* STATE 1: Hero */
+    .hero { padding: 60px 0 72px; }
     .hero-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -199,13 +204,12 @@
       align-items: center;
     }
     .hero h1 {
-      font: 900 clamp(36px, 7.5vw, 58px)/1.04 'Montserrat', sans-serif;
+      font: 900 clamp(36px, 7.5vw, 58px)/1.05 'Montserrat', sans-serif;
       color: var(--t1);
       letter-spacing: -0.015em;
-      text-transform: uppercase;
       margin-top: 16px;
     }
-    .hero h1 em { font-style: normal; color: var(--amber); }
+    .hero h1 em { font-style: normal; color: var(--gold-bright); }
     .hero-sub {
       margin-top: 22px;
       font-size: 18px;
@@ -213,7 +217,6 @@
       color: var(--t2);
       max-width: 580px;
     }
-    .hero-sub strong { color: var(--t1); font-weight: 600; }
     .hero-actions {
       margin-top: 30px;
       display: flex;
@@ -228,11 +231,8 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 16px;
     }
-    .meta-num {
-      font: 800 18px 'Montserrat', sans-serif;
-      color: var(--t1);
-    }
-    .meta-num span { color: var(--amber-b); }
+    .meta-num { font: 800 18px 'Montserrat', sans-serif; color: var(--t1); }
+    .meta-num span { color: var(--gold-bright); }
     .meta-lbl {
       margin-top: 4px;
       font: 500 11px 'JetBrains Mono', monospace;
@@ -241,13 +241,12 @@
       color: var(--t3);
     }
 
-    /* Hero Right: Tactical Dossier Card */
+    /* Tactical Dossier Preview */
     .dossier {
       background: var(--card);
       border: 1px solid var(--line);
-      border-top: 3px solid var(--amber);
+      border-top: 3px solid var(--gold-bright);
       padding: 28px 24px;
-      position: relative;
     }
     .dossier-top {
       display: flex;
@@ -260,9 +259,9 @@
       font: 600 10px 'JetBrains Mono', monospace;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--amber-b);
-      background: rgba(217, 119, 6, 0.12);
-      border: 1px solid rgba(217, 119, 6, 0.35);
+      color: var(--gold-bright);
+      background: var(--gold-soft);
+      border: 1px solid var(--gold-border);
       padding: 5px 10px;
       border-radius: 9999px;
     }
@@ -273,27 +272,19 @@
       text-transform: uppercase;
       letter-spacing: 0.04em;
     }
-    .dossier-desc {
-      margin-top: 8px;
-      font-size: 14px;
-      line-height: 1.6;
-      color: var(--t3);
-    }
-    .dossier-list {
-      list-style: none;
-      margin-top: 20px;
-    }
+    .dossier-desc { margin-top: 8px; font-size: 14px; line-height: 1.6; color: var(--t3); }
+    .dossier-list { list-style: none; margin-top: 20px; }
     .dossier-list li {
       display: flex;
       gap: 14px;
       align-items: flex-start;
       padding: 13px 0;
-      border-top: 1px solid rgba(39, 39, 42, 0.8);
+      border-top: 1px solid rgba(39, 39, 42, 0.85);
     }
     .dossier-day {
       font: 600 11px 'JetBrains Mono', monospace;
       letter-spacing: 0.12em;
-      color: var(--amber-b);
+      color: var(--gold-bright);
       text-transform: uppercase;
       min-width: 58px;
       padding-top: 2px;
@@ -304,18 +295,13 @@
       text-transform: uppercase;
       letter-spacing: 0.06em;
     }
-    .dossier-item-sub {
-      margin-top: 3px;
-      font-size: 13px;
-      line-height: 1.5;
-      color: var(--t3);
-    }
+    .dossier-item-sub { margin-top: 3px; font-size: 13px; line-height: 1.5; color: var(--t3); }
     .dossier-quote {
       margin-top: 20px;
       padding: 16px;
       background: var(--bg);
       border: 1px solid var(--line);
-      border-left: 3px solid var(--amber);
+      border-left: 3px solid var(--gold);
       font: 500 italic 15px/1.55 'Playfair Display', Georgia, serif;
       color: var(--t2);
     }
@@ -326,83 +312,45 @@
       font-style: normal;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--amber-b);
+      color: var(--gold-bright);
     }
 
-    /* Section 2: The Problem / Comfort Drifting */
+    /* Editorial Sections */
     .section { padding: 80px 0; }
     .section-alt { background: var(--bg-alt); }
-    .problem-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 40px;
-      align-items: start;
-    }
-    .problem-copy p {
-      font-size: 16px;
-      line-height: 1.8;
-      color: var(--t2);
-      margin-bottom: 18px;
-    }
+    .problem-grid { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: start; }
+    .problem-copy p { font-size: 16px; line-height: 1.8; color: var(--t2); margin-bottom: 18px; }
     .problem-copy strong { color: var(--t1); font-weight: 600; }
     .callout-stat {
       margin-top: 28px;
       padding: 22px 24px;
       background: var(--card);
       border: 1px solid var(--line);
-      border-left: 3px solid var(--amber);
+      border-left: 3px solid var(--gold);
     }
-    .callout-stat p {
-      margin: 0;
-      font: 500 italic 18px/1.55 'Playfair Display', Georgia, serif;
-      color: var(--t1);
-    }
+    .callout-stat p { margin: 0; font: 500 italic 18px/1.55 'Playfair Display', Georgia, serif; color: var(--t1); }
     .callout-stat span {
       display: block;
       margin-top: 10px;
       font: 500 11px 'JetBrains Mono', monospace;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--amber-b);
+      color: var(--gold-bright);
     }
-    .pain-cards {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
+    .pain-cards { display: grid; grid-template-columns: 1fr; gap: 16px; }
     .pain-card {
       background: var(--card);
       border: 1px solid var(--line);
       padding: 24px;
       transition: border-color 0.2s;
     }
-    .pain-card:hover { border-color: rgba(217, 119, 6, 0.55); }
-    .pain-card h3 {
-      margin-top: 10px;
-      font: 700 16px/1.35 'Montserrat', sans-serif;
-      color: var(--t1);
-      letter-spacing: 0.02em;
-    }
-    .pain-card p {
-      margin-top: 8px;
-      font-size: 14px;
-      line-height: 1.65;
-      color: var(--t3);
-    }
+    .pain-card:hover { border-color: var(--gold-border); }
+    .pain-card h3 { margin-top: 10px; font: 700 16px/1.35 'Montserrat', sans-serif; color: var(--t1); }
+    .pain-card p { margin-top: 8px; font-size: 14px; line-height: 1.65; color: var(--t3); }
 
-    /* Section 3: 7-Day Roadmap */
-    .roadmap-intro {
-      max-width: 680px;
-      font-size: 17px;
-      line-height: 1.7;
-      color: var(--t2);
-      margin-bottom: 36px;
-    }
-    .days-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
+    /* Roadmap Overview */
+    .roadmap-intro { max-width: 680px; font-size: 17px; line-height: 1.7; color: var(--t2); margin-bottom: 36px; }
+    .days-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
     .day-card {
       background: var(--card);
       border: 1px solid var(--line);
@@ -410,76 +358,24 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      position: relative;
     }
     .day-card-final {
-      border-color: rgba(217, 119, 6, 0.6);
-      background: linear-gradient(135deg, rgba(217, 119, 6, 0.10), var(--card) 60%);
+      border-color: var(--gold-border);
+      background: linear-gradient(135deg, rgba(234, 179, 8, 0.10), var(--card) 60%);
     }
-    .day-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 14px;
-    }
+    .day-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
     .day-num {
       font: 600 12px 'JetBrains Mono', monospace;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--amber-b);
+      color: var(--gold-bright);
     }
-    .day-time {
-      font: 500 11px 'JetBrains Mono', monospace;
-      color: var(--t4);
-    }
-    .day-card h3 {
-      font: 800 17px/1.3 'Montserrat', sans-serif;
-      color: var(--t1);
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-    .day-card p {
-      margin-top: 10px;
-      font-size: 14px;
-      line-height: 1.65;
-      color: var(--t3);
-    }
+    .day-time { font: 500 11px 'JetBrains Mono', monospace; color: var(--t4); }
+    .day-card h3 { font: 800 17px/1.3 'Montserrat', sans-serif; color: var(--t1); text-transform: uppercase; letter-spacing: 0.04em; }
+    .day-card p { margin-top: 10px; font-size: 14px; line-height: 1.65; color: var(--t3); }
 
-    /* 3-Step Cadence Strip */
-    .cadence {
-      margin-top: 32px;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1px;
-      background: var(--line);
-      border: 1px solid var(--line);
-    }
-    .cadence-step {
-      background: var(--bg);
-      padding: 22px 24px;
-    }
-    .cadence-step strong {
-      display: block;
-      margin-top: 8px;
-      font: 700 14px 'Montserrat', sans-serif;
-      color: var(--t1);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-    .cadence-step p {
-      margin-top: 6px;
-      font-size: 14px;
-      line-height: 1.55;
-      color: var(--t3);
-    }
-
-    /* Section 4: Meet Dr. Ben */
-    .guide-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 40px;
-      align-items: center;
-    }
+    /* Guide Section */
+    .guide-grid { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; }
     .portrait-frame {
       background: var(--card);
       border: 1px solid var(--line);
@@ -495,36 +391,14 @@
       right: -1px;
       width: 28px;
       height: 28px;
-      border-top: 3px solid var(--amber);
-      border-right: 3px solid var(--amber);
+      border-top: 3px solid var(--gold-bright);
+      border-right: 3px solid var(--gold-bright);
     }
-    .portrait-img {
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-      object-position: top center;
-      filter: contrast(1.04);
-    }
-    .portrait-caption {
-      margin-top: 14px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-    }
-    .guide-copy h2 {
-      font: 800 clamp(26px, 4.5vw, 38px)/1.12 'Montserrat', sans-serif;
-      color: var(--t1);
-      text-transform: uppercase;
-      margin-top: 12px;
-    }
-    .guide-copy h2 em { font-style: normal; color: var(--amber); }
-    .guide-copy p {
-      margin-top: 16px;
-      font-size: 16px;
-      line-height: 1.75;
-      color: var(--t2);
-    }
+    .portrait-img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: top center; }
+    .portrait-caption { margin-top: 14px; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+    .guide-copy h2 { font: 800 clamp(26px, 4.5vw, 38px)/1.12 'Montserrat', sans-serif; color: var(--t1); text-transform: uppercase; margin-top: 12px; }
+    .guide-copy h2 em { font-style: normal; color: var(--gold-bright); }
+    .guide-copy p { margin-top: 16px; font-size: 16px; line-height: 1.75; color: var(--t2); }
     .guide-copy strong { color: var(--t1); }
     .mission-quote {
       margin-top: 26px;
@@ -533,64 +407,37 @@
       font: 600 italic 22px/1.4 'Playfair Display', Georgia, serif;
       color: var(--t1);
     }
-    .mission-quote span { color: var(--amber-b); }
+    .mission-quote span { color: var(--gold-bright); }
 
-    /* Section 5: Lead Capture Section */
+    /* Lead Capture Section */
     .capture-section {
       padding: 88px 0 96px;
       background:
-        radial-gradient(760px 380px at 50% 0%, rgba(217, 119, 6, 0.12), transparent 70%),
+        radial-gradient(760px 380px at 50% 0%, rgba(234, 179, 8, 0.11), transparent 70%),
         var(--bg);
     }
     .capture-box {
       background: var(--card);
       border: 1px solid var(--line);
-      border-top: 4px solid var(--amber);
+      border-top: 4px solid var(--gold-bright);
       display: grid;
       grid-template-columns: 1fr;
     }
     .capture-info {
       padding: 32px 24px;
       border-bottom: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(24, 24, 27, 0.7), rgba(18, 18, 20, 0.9));
+      background: linear-gradient(180deg, rgba(24, 24, 27, 0.72), rgba(18, 18, 20, 0.92));
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       gap: 24px;
     }
-    .capture-info h2 {
-      font: 800 clamp(24px, 4vw, 32px)/1.15 'Montserrat', sans-serif;
-      color: var(--t1);
-      text-transform: uppercase;
-      margin-top: 12px;
-    }
-    .capture-info h2 em { font-style: normal; color: var(--amber); }
-    .capture-info > div > p {
-      margin-top: 14px;
-      font-size: 15px;
-      line-height: 1.65;
-      color: var(--t3);
-    }
-    .checklist {
-      list-style: none;
-      margin-top: 22px;
-      display: grid;
-      gap: 12px;
-    }
-    .checklist li {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      font-size: 14px;
-      line-height: 1.55;
-      color: var(--t2);
-    }
-    .check-mark {
-      color: var(--amber-b);
-      font: 700 13px 'JetBrains Mono', monospace;
-      flex: none;
-      margin-top: 1px;
-    }
+    .capture-info h2 { font: 800 clamp(24px, 4vw, 32px)/1.15 'Montserrat', sans-serif; color: var(--t1); text-transform: uppercase; margin-top: 12px; }
+    .capture-info h2 em { font-style: normal; color: var(--gold-bright); }
+    .capture-info > div > p { margin-top: 14px; font-size: 15px; line-height: 1.65; color: var(--t3); }
+    .checklist { list-style: none; margin-top: 22px; display: grid; gap: 12px; }
+    .checklist li { display: flex; gap: 12px; align-items: flex-start; font-size: 14px; line-height: 1.55; color: var(--t2); }
+    .check-mark { color: var(--gold-bright); font: 700 13px 'JetBrains Mono', monospace; flex: none; margin-top: 1px; }
     .trust-note {
       padding-top: 18px;
       border-top: 1px solid var(--line);
@@ -600,11 +447,10 @@
       text-transform: uppercase;
     }
 
-    /* Form Controls */
     .capture-form-wrap { padding: 32px 24px; }
     label.field, legend {
       display: block;
-      font: 500 12px 'JetBrains Mono', monospace;
+      font: 600 12px 'JetBrains Mono', monospace;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--t3);
@@ -619,13 +465,13 @@
       font: 400 16px 'Inter', sans-serif;
       padding: 15px 16px;
       min-height: 52px;
-      transition: border-color 0.2s, box-shadow 0.2s;
+      transition: border-color 0.2s;
     }
     input[type=email]::placeholder { color: var(--t4); }
     input[type=email]:focus {
-      outline: 2px solid var(--amber);
+      outline: 2px solid var(--gold-bright);
       outline-offset: 1px;
-      border-color: var(--amber);
+      border-color: var(--gold-bright);
     }
     fieldset { border: 0; margin-top: 24px; }
     .opt {
@@ -644,120 +490,195 @@
       color: var(--t2);
       transition: border-color 0.2s, background 0.2s, color 0.2s;
     }
-    .opt:hover { border-color: rgba(217, 119, 6, 0.45); }
+    .opt:hover { border-color: var(--gold-border); }
     .opt:has(input:checked) {
-      border-color: var(--amber);
-      background: rgba(217, 119, 6, 0.09);
+      border-color: var(--gold-bright);
+      background: rgba(234, 179, 8, 0.09);
       color: var(--t1);
     }
-    .opt input {
-      accent-color: var(--amber);
-      width: 20px;
-      height: 20px;
-      margin-top: 1px;
-      flex: none;
-    }
-    .opt:has(input:focus-visible) {
-      outline: 2px solid var(--amber-b);
-      outline-offset: 2px;
-    }
+    .opt input { accent-color: var(--gold-bright); width: 20px; height: 20px; margin-top: 1px; flex: none; }
+    .opt:has(input:focus-visible) { outline: 2px solid var(--gold-bright); outline-offset: 2px; }
     .submit-btn { width: 100%; margin-top: 16px; }
     .spin {
       width: 16px;
       height: 16px;
-      border: 2px solid rgba(0, 0, 0, 0.3);
-      border-top-color: #000;
+      border: 2px solid rgba(9, 9, 11, 0.3);
+      border-top-color: #09090B;
       border-radius: 50%;
       animation: s 0.7s linear infinite;
       display: none;
     }
     .loading .spin { display: inline-block; }
     @keyframes s { to { transform: rotate(360deg); } }
-    .err {
-      margin-top: 14px;
-      color: #FCA5A5;
-      font-size: 14px;
-      line-height: 1.5;
-      display: none;
-    }
-    .fine {
-      margin-top: 14px;
-      font-size: 13px;
-      color: var(--t3);
-      text-align: center;
-    }
+    .err { margin-top: 14px; color: #FCA5A5; font-size: 14px; line-height: 1.5; display: none; }
+    .fine { margin-top: 14px; font-size: 13px; color: var(--t3); text-align: center; }
 
-    /* Confirmation View */
+    /* STATE 2: Instant On-Screen Branded HTML 7-Day Plan */
     .hidden { display: none !important; }
-    .confirm-wrap { padding: 56px 0 88px; }
-    .confirm-card {
+    .plan-section { padding: 48px 0 88px; animation: fadeIn 0.35s ease-out; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    .plan-header {
       background: var(--card);
       border: 1px solid var(--line);
-      border-top: 4px solid var(--amber);
+      border-top: 4px solid var(--gold-bright);
       padding: 32px 24px;
     }
-    .confirm-card h2 {
-      margin-top: 12px;
-      font: 800 clamp(24px, 4.5vw, 34px)/1.2 'Montserrat', sans-serif;
+    .plan-header-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+    .plan-header h1 {
+      margin-top: 14px;
+      font: 900 clamp(28px, 5vw, 44px)/1.08 'Montserrat', sans-serif;
       color: var(--t1);
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
     }
-    .confirm-card .lead {
-      margin-top: 12px;
-      font-size: 17px;
-      line-height: 1.6;
+    .plan-header h1 em { font-style: normal; color: var(--gold-bright); }
+    .plan-intro {
+      margin-top: 14px;
+      font-size: 16px;
+      line-height: 1.65;
       color: var(--t2);
+      max-width: 660px;
     }
-    .notice {
-      margin-top: 20px;
-      padding: 16px 18px;
-      border: 1px solid rgba(217, 119, 6, 0.45);
-      background: rgba(217, 119, 6, 0.09);
-      border-radius: 10px;
+
+    /* Conditional Coaching/Workshop Gold Banner */
+    .alert-banner {
+      margin-top: 22px;
+      padding: 18px 20px;
+      border: 1px solid var(--gold-bright);
+      border-left: 4px solid var(--gold-bright);
+      background: rgba(234, 179, 8, 0.12);
       color: var(--t1);
       font-size: 15px;
+      font-weight: 500;
       line-height: 1.55;
     }
-    ol#days { list-style: none; margin-top: 26px; }
-    ol#days li { padding: 18px 0; border-top: 1px solid var(--line); }
-    ol#days li:first-child { border-top: 0; }
-    .dn {
-      font: 600 12px 'JetBrains Mono', monospace;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--amber-b);
+    .alert-banner strong { color: var(--gold-bright); }
+
+    /* Action Toolbar (Top & Bottom) */
+    .toolbar {
+      margin: 24px 0;
+      padding: 18px 20px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
     }
-    .dt {
-      margin-top: 6px;
-      font-size: 16px;
-      line-height: 1.6;
-      color: var(--t2);
+    .toolbar .btn-primary,
+    .toolbar .btn-secondary {
+      flex: 1 1 210px;
+      min-height: 46px;
+      padding: 12px 18px;
+      font-size: 11px;
     }
-    .today {
-      margin-top: 8px;
-      font: 700 11px 'Montserrat', sans-serif;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: #000;
-      background: var(--amber);
-      display: inline-block;
-      padding: 4px 12px;
-      border-radius: 9999px;
+    .btn-coach {
+      border-color: var(--gold-border);
+      color: var(--gold-bright);
+      background: rgba(212, 175, 55, 0.08);
     }
-    .confirm-footer {
-      margin-top: 28px;
-      padding-top: 22px;
-      border-top: 1px solid var(--line);
+    .btn-coach:hover {
+      background: var(--gold-bright);
+      border-color: var(--gold-bright);
+      color: #09090B;
+    }
+
+    /* The 7 Daily Protocol Cards */
+    .protocol-list {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+    .protocol-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-left: 3px solid var(--gold);
+      padding: 22px 24px;
+      position: relative;
+    }
+    .protocol-card-first {
+      border-color: var(--gold-border);
+      border-left: 4px solid var(--gold-bright);
+      background: linear-gradient(135deg, rgba(234, 179, 8, 0.09), var(--card) 55%);
+    }
+    .protocol-head {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      gap: 14px;
+      gap: 10px;
+    }
+    .protocol-day {
+      font: 700 13px 'JetBrains Mono', monospace;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold-bright);
+    }
+    .start-pill {
+      font: 700 10px 'Montserrat', sans-serif;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #09090B;
+      background: var(--gold-bright);
+      padding: 4px 10px;
+      border-radius: 9999px;
+    }
+    .protocol-prompt {
+      margin-top: 10px;
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--t1);
+    }
+    .protocol-prompt em {
+      font-style: italic;
+      color: #FDE68A;
     }
 
-    /* Footer */
-    footer {
+    /* Signature Footer Card */
+    .plan-signature {
+      margin-top: 24px;
+      padding: 24px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .sig-name {
+      font: 600 italic 22px 'Playfair Display', Georgia, serif;
+      color: var(--t1);
+    }
+    .sig-sub {
+      margin-top: 4px;
+      font: 500 11px 'JetBrains Mono', monospace;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .sig-return {
+      font: 700 12px 'Montserrat', sans-serif;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold-bright);
+    }
+    .sig-return:hover { text-decoration: underline; }
+
+    /* Print-Only Elements */
+    .print-notes { display: none; }
+
+    /* Page Footer */
+    footer.site-footer {
       border-top: 1px solid var(--line);
-      padding: 28px 0;
+      padding: 26px 0;
       background: var(--bg);
     }
     .footer-inner {
@@ -769,19 +690,32 @@
       font-size: 13px;
       color: var(--t4);
     }
-    .footer-inner a:hover { color: var(--amber-b); }
+    .footer-inner a:hover { color: var(--gold-bright); }
 
     /* Responsive Breakpoints */
+    @media (max-width: 420px) {
+      .bar-inner { padding: 13px 14px; gap: 10px; }
+      .logo { font-size: 13px; letter-spacing: 0.14em; }
+      .back-btn { padding: 8px 12px; font-size: 10px; letter-spacing: 0.08em; }
+      .hero { padding: 44px 0 56px; }
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn-primary,
+      .hero-actions .btn-secondary { width: 100%; }
+      .hero-meta { gap: 10px; }
+      .meta-num { font-size: 15px; }
+      .meta-lbl { font-size: 10px; letter-spacing: 0.04em; }
+      .toolbar { padding: 14px; }
+      .toolbar .btn-primary,
+      .toolbar .btn-secondary { flex: 1 1 100%; }
+    }
     @media (min-width: 640px) {
       .nav-link { display: inline-block; }
       .days-grid { grid-template-columns: repeat(2, 1fr); }
       .day-card-final { grid-column: 1 / -1; }
-      .cadence { grid-template-columns: repeat(3, 1fr); }
-      .confirm-card { padding: 44px; }
+      .plan-header { padding: 40px 36px; }
     }
-
     @media (min-width: 900px) {
-      .hero { padding: 84px 0 96px; }
+      .hero { padding: 80px 0 92px; }
       .hero-grid { grid-template-columns: 1.15fr 0.85fr; gap: 56px; }
       .problem-grid { grid-template-columns: 1fr 1fr; gap: 56px; }
       .days-grid { grid-template-columns: repeat(3, 1fr); }
@@ -799,39 +733,143 @@
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       .spin { animation-duration: 2s; }
-      .btn-primary, .btn-secondary, .nav-cta { transition: none; }
+      .plan-section { animation: none; }
+      .btn-primary, .btn-secondary, .back-btn { transition: none; }
+    }
+
+    /* DEDICATED SINGLE-PAGE PRINTABLE PDF WORKSHEET CSS */
+    @media print {
+      @page {
+        size: letter portrait;
+        margin: 0.45in 0.5in;
+      }
+      html, body {
+        background: #FFFFFF !important;
+        color: #111111 !important;
+        font-size: 10.5pt !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .bar,
+      #landing,
+      .toolbar,
+      .alert-banner,
+      .start-pill,
+      .sig-return,
+      footer.site-footer,
+      .no-print {
+        display: none !important;
+      }
+      #plan-view {
+        display: block !important;
+        padding: 0 !important;
+        animation: none !important;
+      }
+      .wrap-plan {
+        max-width: 100% !important;
+        padding: 0 !important;
+      }
+      .plan-header {
+        background: #FFFFFF !important;
+        border: 0 !important;
+        border-top: 3px solid #B45309 !important;
+        border-bottom: 1.5px solid #111111 !important;
+        padding: 10px 0 10px !important;
+        margin-bottom: 12px !important;
+      }
+      .plan-header .eyebrow {
+        color: #92400E !important;
+        font-size: 8.5pt !important;
+      }
+      .plan-header .coord {
+        color: #555555 !important;
+        font-size: 8pt !important;
+      }
+      .plan-header h1 {
+        color: #09090B !important;
+        font-size: 20pt !important;
+        margin-top: 4px !important;
+      }
+      .plan-header h1 em { color: #92400E !important; }
+      .plan-intro {
+        color: #333333 !important;
+        font-size: 9.5pt !important;
+        line-height: 1.4 !important;
+        margin-top: 4px !important;
+      }
+      .protocol-list {
+        gap: 8px !important;
+      }
+      .protocol-card,
+      .protocol-card-first {
+        background: #FFFFFF !important;
+        border: 1px solid #D4D4D8 !important;
+        border-left: 3.5px solid #B45309 !important;
+        padding: 9px 12px !important;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+      .protocol-day {
+        color: #92400E !important;
+        font-size: 9pt !important;
+      }
+      .protocol-prompt {
+        color: #111111 !important;
+        font-size: 10.5pt !important;
+        line-height: 1.38 !important;
+        margin-top: 3px !important;
+      }
+      .protocol-prompt em { color: #111111 !important; font-style: italic; }
+      .print-notes {
+        display: block !important;
+        margin-top: 7px;
+        border-bottom: 1px dashed #A1A1AA;
+        height: 16px;
+      }
+      .plan-signature {
+        margin-top: 12px !important;
+        padding: 10px 0 0 !important;
+        background: #FFFFFF !important;
+        border: 0 !important;
+        border-top: 1.5px solid #111111 !important;
+      }
+      .sig-name { color: #09090B !important; font-size: 13pt !important; }
+      .sig-sub { color: #666666 !important; font-size: 8pt !important; }
     }
   </style>
 </head>
 <body>
+  <!-- ALWAYS-VISIBLE TOP NAVIGATION BAR -->
   <header class="bar">
     <div class="bar-inner">
-      <a class="logo" href="/">Slay Your Giant<span>.</span></a>
-      <nav class="nav-links" aria-label="Page navigation">
-        <a class="nav-link" href="#the-friction">Why It Works</a>
-        <a class="nav-link" href="#inside-plan">Inside the 7 Days</a>
-        <a class="nav-link" href="#meet-dr-ben">Dr. Ben</a>
-        <a class="nav-link" href="/">Main Site</a>
-        <a class="nav-cta" href="#claim-plan">Get the Free Plan</a>
+      <a class="logo" href="/">SLAY YOUR GIANT<span>.</span></a>
+      <nav class="nav-right" aria-label="Page navigation">
+        <a class="nav-link state1-only" href="#the-friction">Why It Works</a>
+        <a class="nav-link state1-only" href="#inside-plan">The 7 Days</a>
+        <a class="nav-link state1-only" href="#meet-dr-ben">Dr. Ben</a>
+        <a class="back-btn" href="/">← Back to SlayGiant.com</a>
       </nav>
     </div>
   </header>
 
   <main>
+    <!-- ============================================================ -->
+    <!-- STATE 1: FULL-PAGE NARRATIVE + LEAD CAPTURE GATE             -->
+    <!-- ============================================================ -->
     <div id="landing">
       <!-- SECTION 1: HERO -->
       <section class="hero">
         <div class="wrap">
           <div class="hero-grid">
             <div>
-              <span class="eyebrow">// Free 7-Day Field Plan · 10 Minutes a Day</span>
-              <h1>Stop Drifting.<br>Slay Your Giant <em>in 7 Days</em></h1>
+              <span class="eyebrow">7-DAY FIELD PROTOCOL // DR. BEN C. JOHNSON III</span>
+              <h1>Slay Your Giant <em>in 7 Days</em></h1>
               <p class="hero-sub">
-                What's the one thing you've been putting off—the decision, the calling, or the habit that keeps pulling you backward? Give it <strong>ten focused minutes a day</strong>. Dr. Ben C. Johnson III will walk you through naming what's in your way, taking one decisive move, and recording a real victory by the end of the week.
+                What's one thing you've been putting off? Give it ten minutes a day. I'll help you name what's in your way, take one step, and record a victory by the end of the week.
               </p>
               <div class="hero-actions">
-                <a class="btn-primary" href="#claim-plan" id="hero-cta">Send Me the Free Plan ↓</a>
-                <a class="btn-secondary" href="#inside-plan">See All 7 Days</a>
+                <a class="btn-primary" href="#claim-plan" id="hero-cta">Send My Free 7-Day Plan ↓</a>
+                <a class="btn-secondary" href="#inside-plan">Preview the 7 Days</a>
               </div>
               <div class="hero-meta">
                 <div>
@@ -843,8 +881,8 @@
                   <div class="meta-lbl">Built for Real Schedules</div>
                 </div>
                 <div>
-                  <div class="meta-num">$0 <span>Free</span></div>
-                  <div class="meta-lbl">Inbox + Instant View</div>
+                  <div class="meta-num">Instant <span>PDF</span></div>
+                  <div class="meta-lbl">On-Screen + Printable</div>
                 </div>
               </div>
             </div>
@@ -853,15 +891,15 @@
             <aside class="dossier" aria-label="Preview of the 7-day plan">
               <div class="dossier-top">
                 <span class="coord">FIELD_BRIEF // 7D-01</span>
-                <span class="badge-pill">Free Digital Asset</span>
+                <span class="badge-pill">Free Instant Access</span>
               </div>
               <h2 class="dossier-title">The 7-Day Giant-Slayer Plan</h2>
-              <p class="dossier-desc">A concise, zero-fluff daily calibration built on Dr. Ben's AIM (Active Intentional Movement) system.</p>
+              <p class="dossier-desc">A concise, zero-fluff daily calibration built on Dr. Ben's AIM (Active Intentional Movement) system. Unlocks instantly on screen with one-click PDF worksheet download.</p>
               <ul class="dossier-list">
                 <li>
                   <span class="dossier-day">Day 01</span>
                   <div>
-                    <div class="dossier-item-title">Lock Your AIM</div>
+                    <div class="dossier-item-title">AIM</div>
                     <div class="dossier-item-sub">Set one clear target with a specific day and time—ending vague intentions.</div>
                   </div>
                 </li>
@@ -910,13 +948,13 @@
           <div class="problem-grid">
             <div class="problem-copy">
               <p>
-                Most people don't fail because they lack talent, faith, or desire. They stall because of <strong>comfort drifting</strong>—staying busy with low-risk routines while the single assignment that matters most gets pushed to "next week."
+                Most people don't stall because they lack talent, faith, or desire. They stall because of <strong>comfort drifting</strong>—staying busy with safe routines while the one assignment that matters most keeps getting pushed to "next week."
               </p>
               <p>
-                You don't need another three-hour seminar or a surge of hype that fades by Tuesday morning. Under Dr. Ben's <strong>AIM (Active Intentional Movement)</strong> principle, clarity follows motion—God does not align steps that aren't moving.
+                You don't need another burst of hype that fades by Tuesday morning. Under Dr. Ben's <strong>AIM (Active Intentional Movement)</strong> principle, clarity follows motion—God does not align steps that aren't moving.
               </p>
               <p>
-                This 7-day plan strips away the noise. Each day gives you one direct prompt you can finish in ten minutes so you stop rehearsing excuses and start stacking documented wins.
+                This 7-day protocol strips away the noise. Each day gives you one direct prompt you can complete in ten focused minutes so you stop rehearsing excuses and start stacking documented wins.
               </p>
               <div class="callout-stat">
                 <p>"The greatest potential is at the graveyard—not because people lacked a calling, but because they let unnamed giants keep them standing still."</p>
@@ -928,24 +966,24 @@
               <article class="pain-card">
                 <span class="coord">PATTERN 01 // THE RESTART LOOP</span>
                 <h3>You keep restarting the same promise</h3>
-                <p>You know what needs to change—your discipline, a difficult decision, a project, or a leadership step—yet every week ends with the exact same unfinished aim.</p>
+                <p>You know what needs to change—a difficult decision, a personal discipline, a project, or a leadership step—yet every week ends with the exact same unfinished aim.</p>
               </article>
               <article class="pain-card">
                 <span class="coord">PATTERN 02 // THE UNNAMED BARRIER</span>
                 <h3>The obstacle feels bigger than it really is</h3>
-                <p>When procrastination, fear, or perfectionism stays vague, it runs the room. Naming the exact condition that trips you up shrinks it to something you can actually confront.</p>
+                <p>When procrastination, fear, or perfectionism stays vague, it runs the room. Naming the exact moment and condition that trips you up shrinks it to something you can confront.</p>
               </article>
               <article class="pain-card">
                 <span class="coord">PATTERN 03 // WAITING TO FEEL READY</span>
                 <h3>You've been waiting for perfect timing</h3>
-                <p>Confidence isn't the prerequisite for taking action—it's the result of taking a ten-minute step, adjusting one condition, and proving to yourself you follow through.</p>
+                <p>Confidence isn't the prerequisite for taking action—it's the result of taking a ten-minute step, changing one condition, and proving to yourself that you follow through.</p>
               </article>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- SECTION 3: INSIDE THE 7-DAY PLAN -->
+      <!-- SECTION 3: INSIDE THE 7-DAY PROTOCOL -->
       <section id="inside-plan" class="section divider">
         <div class="wrap">
           <div class="sec-head">
@@ -957,7 +995,7 @@
           </div>
 
           <p class="roadmap-intro">
-            Every day builds on the one before it—moving you from a single named aim on Day 1 to a recorded win by Day 7. Claim the plan below to unlock the exact daily prompts on screen and in your inbox.
+            Every day builds on the one before it—moving you from one concrete aim on Day 1 to a recorded victory by Day 7. Unlock the full printable protocol immediately below.
           </p>
 
           <div class="days-grid">
@@ -979,7 +1017,7 @@
               <div>
                 <div class="day-top"><span class="day-num">Day 03</span><span class="day-time">10 MIN</span></div>
                 <h3>Name Your Giant</h3>
-                <p>Audit the exact moment you stopped the last time you tried so you can expose the real friction instead of fighting shadows.</p>
+                <p>Audit the exact moment you stopped last time so you expose the real friction instead of fighting shadows.</p>
               </div>
             </article>
             <article class="day-card">
@@ -993,41 +1031,23 @@
               <div>
                 <div class="day-top"><span class="day-num">Day 05</span><span class="day-time">10 MIN</span></div>
                 <h3>Change One Condition</h3>
-                <p>Instead of relying on willpower alone, alter one environmental or mental trigger that got in your way and run your step again.</p>
+                <p>Alter one environmental or mental trigger that got in your way instead of relying on willpower alone, then try your step again.</p>
               </div>
             </article>
             <article class="day-card">
               <div>
                 <div class="day-top"><span class="day-num">Day 06</span><span class="day-time">10 MIN</span></div>
                 <h3>Scoreboard</h3>
-                <p>Run an honest two-line accountability check comparing what you said you would do with what you actually executed.</p>
+                <p>Run an honest two-line accountability check comparing what you said you would do with what you actually did.</p>
               </div>
             </article>
             <article class="day-card day-card-final">
               <div>
                 <div class="day-top"><span class="day-num">Day 07 · Culmination</span><span class="day-time">10 MIN</span></div>
                 <h3>Record Your Victory</h3>
-                <p>Lock in the week's breakthrough by documenting a real win on your Victory Wall—and immediately set your next aim so momentum doesn't cool off.</p>
+                <p>Lock in the week's breakthrough by writing one win on your Victory Wall—and immediately choose your next aim so momentum never cools off.</p>
               </div>
             </article>
-          </div>
-
-          <div class="cadence" aria-label="How the 7-day plan works">
-            <div class="cadence-step">
-              <span class="coord">STEP 01</span>
-              <strong>Claim Your Plan Below</strong>
-              <p>Enter your email and choose whether you just want the free plan or direct outreach from Dr. Ben.</p>
-            </div>
-            <div class="cadence-step">
-              <span class="coord">STEP 02</span>
-              <strong>Start Day 1 Immediately</strong>
-              <p>Your complete 7-day guide unlocks right on the page and arrives in your inbox so you can reference it all week.</p>
-            </div>
-            <div class="cadence-step">
-              <span class="coord">STEP 03</span>
-              <strong>Stack a Real Win by Sunday</strong>
-              <p>Give each daily prompt ten honest minutes—and finish the week with proof that you can confront and beat your giant.</p>
-            </div>
           </div>
         </div>
       </section>
@@ -1051,7 +1071,7 @@
                 Doctor of Theology, life coach, motivational speaker, and creator of the <strong>Slay Your Giant</strong> system, Dr. Ben C. Johnson III learned early that purpose is never a passive operation. At eleven years old, he pushed through freezing Detroit blizzards on a daily paper route while the rest of the city stayed indoors.
               </p>
               <p>
-                That early discipline shaped a lifetime mission: helping individuals, leaders, churches, schools, and organizations expose the silent barriers keeping them stagnant and move forward with timeless biblical principles and practical daily execution.
+                That discipline shaped a lifetime mission: helping individuals, leaders, churches, schools, and organizations expose the silent barriers keeping them stagnant and move forward with timeless biblical principles and practical daily execution.
               </p>
               <p class="mission-quote">
                 "I help ordinary people become the <span>possible people</span> doing the impossible."
@@ -1061,33 +1081,33 @@
         </div>
       </section>
 
-      <!-- SECTION 5: LEAD CAPTURE -->
+      <!-- SECTION 5: LEAD CAPTURE FORM -->
       <section id="claim-plan" class="capture-section divider">
         <div class="wrap">
           <div class="capture-box">
             <div class="capture-info">
               <div>
-                <span class="eyebrow">04 // CLAIM YOUR FREE ASSET</span>
-                <h2>Get the Free <em>7-Day Giant-Slayer Plan</em> Now</h2>
-                <p>Enter your best email and let Dr. Ben know how he can best serve you right now. Your full 7-day plan arrives in your inbox and opens immediately on screen.</p>
+                <span class="eyebrow">04 // UNLOCK INSTANT ACCESS</span>
+                <h2>Claim Your Free <em>7-Day Giant-Slayer Plan</em></h2>
+                <p>Enter your email below and let Dr. Ben know how he can best serve you right now. Your full 7-day protocol opens immediately on screen—ready to read, bookmark, or save as a one-page PDF worksheet.</p>
 
                 <ul class="checklist">
-                  <li><span class="check-mark">01 /</span><span>Full 7-day daily prompt guide delivered straight to your inbox</span></li>
-                  <li><span class="check-mark">02 /</span><span>Instant on-screen access so you can complete Day 1 in the next 10 minutes</span></li>
-                  <li><span class="check-mark">03 /</span><span>Optional personal outreach from Dr. Ben for 1-on-1 coaching or group workshops</span></li>
+                  <li><span class="check-mark">01 /</span><span>Instant on-screen access to all 7 daily AIM prompts—no waiting on email delivery</span></li>
+                  <li><span class="check-mark">02 /</span><span>One-click Download / Save as crisp single-page printable PDF worksheet</span></li>
+                  <li><span class="check-mark">03 /</span><span>Optional personal outreach from Dr. Ben for personal coaching or group workshops</span></li>
                 </ul>
               </div>
-              <div class="trust-note">100% Free · Zero Spam · Unsubscribe Anytime</div>
+              <div class="trust-note">100% Free · Instant Unlock · Zero Spam</div>
             </div>
 
             <div class="capture-form-wrap">
               <form id="signup" novalidate>
-                <label class="field" for="email">Your email address</label>
+                <label class="field" for="email">Email Address</label>
                 <input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required>
 
                 <fieldset>
-                  <legend>What would you like from Dr. Ben?</legend>
-                  <label class="opt"><input type="radio" name="choice" value="free_plan" checked><span>Just send me the free 7-day plan</span></label>
+                  <legend>What would you like from me?</legend>
+                  <label class="opt"><input type="radio" name="choice" value="free_plan" checked><span>Just send me the free plan</span></label>
                   <label class="opt"><input type="radio" name="choice" value="personal_coaching"><span>I'd like Dr. Johnson to contact me about personal coaching</span></label>
                   <label class="opt"><input type="radio" name="choice" value="group_workshop"><span>I'd like Dr. Johnson to contact me about a workshop for my group</span></label>
                 </fieldset>
@@ -1098,7 +1118,7 @@
                   <span id="btn-label">Send My Free 7-Day Plan</span>
                 </button>
                 <p class="err" id="err" role="alert"></p>
-                <p class="fine">Free. No spam. Unsubscribe anytime.</p>
+                <p class="fine">Free. Unlocks immediately on screen.</p>
               </form>
             </div>
           </div>
@@ -1106,102 +1126,265 @@
       </section>
     </div>
 
-    <!-- CONFIRMATION VIEW (SHOWN AFTER SUCCESSFUL SUBMIT) -->
-    <section id="confirm" class="confirm-wrap hidden" aria-live="polite" tabindex="-1">
-      <div class="wrap-narrow">
-        <div class="confirm-card">
-          <p class="eyebrow">// You're in · Plan Unlocked</p>
-          <h2>Your Free 7-Day Giant-Slayer Plan is on the way!</h2>
-          <p class="lead">Check your inbox—and start Day 1 right now below:</p>
-          <p class="notice hidden" id="notice">Dr. Ben C. Johnson III has been notified of your request and will reach out to you personally.</p>
-          <ol id="days"></ol>
-          <div class="confirm-footer">
-            <span class="coord">SLAY YOUR GIANT // AIM PROTOCOL</span>
-            <a class="btn-secondary" href="/">Explore the Main Site →</a>
+    <!-- ============================================================ -->
+    <!-- STATE 2: INSTANT ON-SCREEN BRANDED HTML 7-DAY PLAN           -->
+    <!-- ============================================================ -->
+    <section id="plan-view" class="plan-section hidden" aria-live="polite" tabindex="-1">
+      <div class="wrap-plan">
+        <div class="plan-header">
+          <div class="plan-header-top">
+            <span class="eyebrow">7-DAY FIELD PROTOCOL // UNLOCKED</span>
+            <span class="coord">SLAYGIANT.COM // 10 MIN / DAY</span>
           </div>
+          <h1>Your 7-Day <em>Giant-Slayer</em> Plan</h1>
+          <p class="plan-intro">
+            Give it ten focused minutes a day. Name what's in your way, take one decisive step, and record a victory by the end of the week. Start Day 1 right now.
+          </p>
+
+          <!-- Conditional Coaching / Workshop Confirmation Banner -->
+          <div id="contact-banner" class="alert-banner hidden" role="status">
+            <strong>Confirmed:</strong> Dr. Ben C. Johnson III has been alerted of your request and will reach out to you personally.
+          </div>
+        </div>
+
+        <!-- TOP ACTION TOOLBAR -->
+        <div class="toolbar no-print" aria-label="Plan actions">
+          <button type="button" class="btn-primary js-print-btn">Download / Save as PDF</button>
+          <button type="button" class="btn-secondary js-copy-btn">Copy Plan Link</button>
+          <a class="btn-secondary btn-coach" href="/">Talk Through Your Giant With Coach Ben AI →</a>
+        </div>
+
+        <!-- 7 DAILY PROTOCOL CARDS -->
+        <ol class="protocol-list" id="protocol-list">
+          <li class="protocol-card protocol-card-first">
+            <div class="protocol-head">
+              <span class="protocol-day">DAY 1 // AIM</span>
+              <span class="start-pill">Start Today</span>
+            </div>
+            <p class="protocol-prompt">Finish this sentence: <em>"By Sunday, I will __________________."</em> Give it a day and time.</p>
+            <div class="print-notes" aria-hidden="true"></div>
+          </li>
+
+          <li class="protocol-card">
+            <div class="protocol-head">
+              <span class="protocol-day">DAY 2 // IDENTITY</span>
+            </div>
+            <p class="protocol-prompt">Name one quality you want to live by. Show it through one choice today.</p>
+            <div class="print-notes" aria-hidden="true"></div>
+          </li>
+
+          <li class="protocol-card">
+            <div class="protocol-head">
+              <span class="protocol-day">DAY 3 // NAME YOUR GIANT</span>
+            </div>
+            <p class="protocol-prompt">Recall the moment you stopped last time. What got in your way?</p>
+            <div class="print-notes" aria-hidden="true"></div>
+          </li>
+
+          <li class="protocol-card">
+            <div class="protocol-head">
+              <span class="protocol-day">DAY 4 // MAKE YOUR MOVE</span>
+            </div>
+            <p class="protocol-prompt">Set a ten-minute timer. Take the first step toward your aim.</p>
+            <div class="print-notes" aria-hidden="true"></div>
+          </li>
+
+          <li class="protocol-card">
+            <div class="protocol-head">
+              <span class="protocol-day">DAY 5 // CHANGE ONE CONDITION</span>
+            </div>
+            <p class="protocol-prompt">Change one thing that got in the way. Try your step again.</p>
+            <div class="print-notes" aria-hidden="true"></div>
+          </li>
+
+          <li class="protocol-card">
+            <div class="protocol-head">
+              <span class="protocol-day">DAY 6 // SCOREBOARD</span>
+            </div>
+            <p class="protocol-prompt">Write two lines: <em>"I said I would __________________ / I actually did __________________."</em></p>
+            <div class="print-notes" aria-hidden="true"></div>
+          </li>
+
+          <li class="protocol-card">
+            <div class="protocol-head">
+              <span class="protocol-day">DAY 7 // RECORD YOUR VICTORY</span>
+            </div>
+            <p class="protocol-prompt">Write one win on your Victory Wall. Choose your next aim.</p>
+            <div class="print-notes" aria-hidden="true"></div>
+          </li>
+        </ol>
+
+        <!-- BOTTOM ACTION TOOLBAR -->
+        <div class="toolbar no-print" aria-label="Plan actions bottom">
+          <button type="button" class="btn-primary js-print-btn">Download / Save as PDF</button>
+          <button type="button" class="btn-secondary js-copy-btn">Copy Plan Link</button>
+          <a class="btn-secondary btn-coach" href="/">Talk Through Your Giant With Coach Ben AI →</a>
+        </div>
+
+        <!-- FOOTER SIGNATURE -->
+        <div class="plan-signature">
+          <div>
+            <div class="sig-name">— Dr. Ben C. Johnson III</div>
+            <div class="sig-sub">Slay Your Giant · Active Intentional Movement (AIM) · SlayGiant.com</div>
+          </div>
+          <a class="sig-return" href="/">← Return to SlayGiant.com</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <div class="wrap footer-inner">
       <span>Slay Your Giant · Dr. Ben C. Johnson III</span>
-      <a href="/">Return to Main Site</a>
+      <a href="/">← Back to SlayGiant.com</a>
     </div>
   </footer>
 
   <script>
-    var DAYS = [
-      ['AIM', 'Finish this sentence: “By Sunday, I will ______.” Give it a day and time.'],
-      ['Identity', 'Name one quality you want to live by. Show it through one choice today.'],
-      ['Name Your Giant', 'Recall the moment you stopped last time. What got in your way?'],
-      ['Make Your Move', 'Set a ten-minute timer. Take the first step toward your aim.'],
-      ['Change One Condition', 'Change one thing that got in the way. Try your step again.'],
-      ['Scoreboard', 'Write two lines: “I said I would ______ / I actually did ______.”'],
-      ['Record Your Victory', 'Write one win on your Victory Wall. Choose your next aim.']
-    ];
+    (function () {
+      var PLAN_SHARE_URL = 'https://www.slaygiant.com/7days?unlocked=1';
+      var DEFAULT_TITLE = document.title;
 
-    // Capture referrer: ?utm_source=, then ?src=, then document.referrer
-    var params = new URLSearchParams(location.search);
-    document.getElementById('source').value =
-      (params.get('utm_source') || params.get('src') || document.referrer || '').slice(0, 200);
+      var params = new URLSearchParams(window.location.search);
+      var rawSource = (params.get('src') || params.get('utm_source') || document.referrer || 'direct').slice(0, 200);
+      var sourceInput = document.getElementById('source');
+      if (sourceInput) sourceInput.value = rawSource;
 
-    // Focus email when jumping from hero CTA
-    var heroCta = document.getElementById('hero-cta');
-    if (heroCta) {
-      heroCta.addEventListener('click', function () {
-        setTimeout(function () { document.getElementById('email').focus(); }, 350);
-      });
-    }
+      var landingEl = document.getElementById('landing');
+      var planViewEl = document.getElementById('plan-view');
+      var contactBannerEl = document.getElementById('contact-banner');
+      var form = document.getElementById('signup');
+      var emailInput = document.getElementById('email');
+      var submitBtn = document.getElementById('submit');
+      var btnLabel = document.getElementById('btn-label');
+      var errEl = document.getElementById('err');
 
-    var form = document.getElementById('signup');
-    var btn = document.getElementById('submit');
-    var label = document.getElementById('btn-label');
-    var err = document.getElementById('err');
-
-    function showErr(msg) { err.textContent = msg; err.style.display = 'block'; }
-
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      err.style.display = 'none';
-      var email = document.getElementById('email').value.trim();
-      var choice = form.elements.choice.value;
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
-        showErr('Please enter a valid email address.');
-        document.getElementById('email').focus();
-        return;
+      function showErr(msg) {
+        errEl.textContent = msg;
+        errEl.style.display = 'block';
       }
-      btn.disabled = true; form.classList.add('loading'); label.textContent = 'Sending…';
 
-      fetch('/api/7days', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: email, choice: choice, source: document.getElementById('source').value })
-      }).then(function (r) {
-        return r.json().catch(function () { return {}; }).then(function (d) { return { ok: r.ok, d: d }; });
-      }).then(function (res) {
-        if (!res.ok) throw new Error(res.d.error || 'Something went wrong.');
-        var list = document.getElementById('days');
-        list.innerHTML = '';
-        DAYS.forEach(function (d, i) {
-          var li = document.createElement('li');
-          var n = document.createElement('div'); n.className = 'dn'; n.textContent = 'Day ' + (i + 1) + ' · ' + d[0];
-          var t = document.createElement('p'); t.className = 'dt'; t.textContent = d[1];
-          li.appendChild(n); li.appendChild(t);
-          if (i === 0) { var b = document.createElement('span'); b.className = 'today'; b.textContent = 'Start here'; li.appendChild(b); }
-          list.appendChild(li);
+      function revealPlan(showContactBanner) {
+        if (showContactBanner) {
+          contactBannerEl.classList.remove('hidden');
+        } else {
+          contactBannerEl.classList.add('hidden');
+        }
+        landingEl.classList.add('hidden');
+        document.querySelectorAll('.state1-only').forEach(function (el) {
+          el.classList.add('hidden');
         });
-        if (choice !== 'free_plan') document.getElementById('notice').classList.remove('hidden');
-        document.getElementById('landing').classList.add('hidden');
-        var c = document.getElementById('confirm');
-        c.classList.remove('hidden');
-        window.scrollTo({ top: 0 }); c.focus();
-      }).catch(function (ex) {
-        showErr(ex.message || 'Something went wrong. Please try again.');
-        btn.disabled = false; form.classList.remove('loading'); label.textContent = 'Send My Free 7-Day Plan';
+        planViewEl.classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        planViewEl.focus({ preventScroll: true });
+      }
+
+      // Support ?unlocked=1 so bookmarked/copied links open directly to State 2
+      if (params.get('unlocked') === '1') {
+        revealPlan(false);
+      }
+
+      // Smooth focus when jumping from hero CTA to capture form
+      var heroCta = document.getElementById('hero-cta');
+      if (heroCta) {
+        heroCta.addEventListener('click', function () {
+          setTimeout(function () { emailInput.focus(); }, 350);
+        });
+      }
+
+      // Form Submission -> POST /api/7days -> Instant State 2 Reveal
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        errEl.style.display = 'none';
+
+        var email = emailInput.value.trim();
+        var choice = form.elements.choice.value;
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+          showErr('Please enter a valid email address.');
+          emailInput.focus();
+          return;
+        }
+
+        submitBtn.disabled = true;
+        form.classList.add('loading');
+        btnLabel.textContent = 'Unlocking Your Plan…';
+
+        fetch('/api/7days', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email: email,
+            choice: choice,
+            source: sourceInput.value
+          })
+        })
+          .then(function (r) {
+            return r.json().catch(function () { return {}; }).then(function (d) {
+              return { ok: r.ok, d: d };
+            });
+          })
+          .then(function (res) {
+            if (!res.ok) throw new Error(res.d.error || 'Could not process your request. Please try again.');
+            revealPlan(choice === 'personal_coaching' || choice === 'group_workshop');
+          })
+          .catch(function (ex) {
+            showErr(ex.message || 'Something went wrong. Please try again.');
+            submitBtn.disabled = false;
+            form.classList.remove('loading');
+            btnLabel.textContent = 'Send My Free 7-Day Plan';
+          });
       });
-    });
+
+      // Print / Save as PDF (sets clean filename title while printing)
+      window.addEventListener('afterprint', function () {
+        document.title = DEFAULT_TITLE;
+      });
+      document.querySelectorAll('.js-print-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          document.title = 'Slay-Your-Giant-7-Day-Plan';
+          window.print();
+          setTimeout(function () { document.title = DEFAULT_TITLE; }, 1000);
+        });
+      });
+
+      // Copy Plan Link -> https://www.slaygiant.com/7days?unlocked=1
+      function copyText(text) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          return navigator.clipboard.writeText(text);
+        }
+        return new Promise(function (resolve, reject) {
+          try {
+            var ta = document.createElement('textarea');
+            ta.value = text;
+            ta.setAttribute('readonly', '');
+            ta.style.position = 'fixed';
+            ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+            resolve();
+          } catch (err) {
+            reject(err);
+          }
+        });
+      }
+
+      document.querySelectorAll('.js-copy-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          copyText(PLAN_SHARE_URL).then(function () {
+            document.querySelectorAll('.js-copy-btn').forEach(function (b) {
+              b.textContent = 'Link Copied!';
+            });
+            setTimeout(function () {
+              document.querySelectorAll('.js-copy-btn').forEach(function (b) {
+                b.textContent = 'Copy Plan Link';
+              });
+            }, 2000);
+          });
+        });
+      });
+    })();
   </script>
 </body>
 </html>

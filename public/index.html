@@ -176,14 +176,38 @@
         </button>
       </li>
     </ul>
+
+    <!-- Always-Visible Mobile / Tablet Header Actions (< 1180px) -->
+    <div class="mobile-nav-actions">
+      <a href="/7days" id="mobile-seven-day-btn" class="mobile-7day-cta">7-Day Plan</a>
+      <button type="button" id="mobile-menu-toggle" class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav-drawer">
+        <i class="fa-solid fa-bars" id="mobile-menu-icon" aria-hidden="true"></i>
+      </button>
+    </div>
   </nav>
+
+  <!-- Mobile / Tablet Slide-Down Navigation Drawer -->
+  <div id="mobile-nav-drawer" class="mobile-nav-drawer" aria-hidden="true">
+    <div class="mobile-drawer-inner">
+      <a href="#friction" class="mobile-drawer-link">The Friction</a>
+      <a href="#standalone-assets" class="mobile-drawer-link">Field Manuals</a>
+      <a href="#portal" class="mobile-drawer-link">Voice Portal</a>
+      <a href="#methodology" class="mobile-drawer-link">The AIM System</a>
+      <a href="#transformation" class="mobile-drawer-link">Victory Wall</a>
+      <a href="#offerings" class="mobile-drawer-link">Ecosystem</a>
+      <div class="mobile-drawer-divider"></div>
+      <a href="/7days" class="mobile-drawer-cta-primary">Free 7-Day Plan →</a>
+      <button type="button" id="mobile-calibration-trigger" class="mobile-drawer-action">Begin Calibration</button>
+      <button type="button" id="mobile-youth-trigger" class="mobile-drawer-action mobile-drawer-youth">🛡️ Youth Initiative</button>
+    </div>
+  </div>
 
   <!-- Section 1: Hero Space -->
   <section class="hero-section" id="hero">
     <div class="container hero-grid">
       <div class="hero-left">
         <span class="label-caps hero-tag">// THE AIM INITIATIVE</span>
-        <h1 class="text-5xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight uppercase" style="font-family: var(--font-montserrat);">SLAY YOUR GIANT: <span class="text-[#D97706]">The Possible People Doing the Impossible</span></h1>
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight uppercase" style="font-family: var(--font-montserrat);">SLAY YOUR GIANT: <span class="text-[#D97706]">The Possible People Doing the Impossible</span></h1>
         <p class="text-zinc-400 text-lg sm:text-xl leading-relaxed max-w-xl">"Helping Individuals, Churches, Schools, Organizations, Leaders, Families, and Communities Discover Their Purpose, Overcome Life's Giants, and Build Lasting Significance Through Timeless Biblical Principles."</p>
         <div class="hero-ctas">
           <a href="#portal" class="btn-primary">Start Your Journey</a>
@@ -1007,6 +1031,62 @@
         heroVideo.load();
       });
     }
+
+    // Mobile / Tablet Navigation Drawer
+    (function () {
+      const toggleBtn = document.getElementById('mobile-menu-toggle');
+      const drawer = document.getElementById('mobile-nav-drawer');
+      const icon = document.getElementById('mobile-menu-icon');
+      if (!toggleBtn || !drawer) return;
+
+      function setDrawerOpen(open) {
+        drawer.classList.toggle('is-open', open);
+        drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
+        toggleBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (icon) {
+          icon.classList.toggle('fa-bars', !open);
+          icon.classList.toggle('fa-xmark', open);
+        }
+      }
+
+      toggleBtn.addEventListener('click', () => {
+        setDrawerOpen(!drawer.classList.contains('is-open'));
+      });
+
+      drawer.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => setDrawerOpen(false));
+      });
+
+      const mobileCalBtn = document.getElementById('mobile-calibration-trigger');
+      if (mobileCalBtn) {
+        mobileCalBtn.addEventListener('click', () => {
+          setDrawerOpen(false);
+          const desktopBtn = document.getElementById('calibration-trigger-btn');
+          if (desktopBtn) desktopBtn.click();
+        });
+      }
+
+      const mobileYouthBtn = document.getElementById('mobile-youth-trigger');
+      if (mobileYouthBtn) {
+        mobileYouthBtn.addEventListener('click', () => {
+          setDrawerOpen(false);
+          const desktopBtn = document.getElementById('youth-initiative-trigger');
+          if (desktopBtn) desktopBtn.click();
+        });
+      }
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && drawer.classList.contains('is-open')) {
+          setDrawerOpen(false);
+        }
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth >= 1180 && drawer.classList.contains('is-open')) {
+          setDrawerOpen(false);
+        }
+      });
+    })();
   </script>
 </body>
 </html>
